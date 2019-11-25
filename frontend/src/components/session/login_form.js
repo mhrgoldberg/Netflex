@@ -13,12 +13,13 @@ class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.handleDemoUser = this.handleDemoUser.bind(this);
     }
 
     // Once the user has been authenticated, redirect to the Tweets page
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
-            this.props.history.push('/tweets');
+            this.props.history.push('/');
         }
 
         // Set or clear errors
@@ -30,6 +31,15 @@ class LoginForm extends React.Component {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        let user = {
+            email: "demo@demo.demo",
+            password: "password"
+        };
+        this.props.login(user);
     }
 
     // Handle form submission
@@ -47,9 +57,9 @@ class LoginForm extends React.Component {
     // Render the session errors if there are any
     renderErrors() {
         return (
-            <ul>
+            <ul className="errors-list">
                 {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li className="errors-item"key={`error-${i}`}>
                         {this.state.errors[error]}
                     </li>
                 ))}
@@ -59,23 +69,26 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="login-form-container">
+                <h1>Sign In</h1>
+                <p>Sign in to start watching or restart your membership</p>
                 <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <input type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            placeholder="Email"
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
-                        <br />
-                        <input type="submit" value="Submit" />
-                        {this.renderErrors()}
+                    <div className="login-form-form">
+                        <div className="input-box">
+                            <label htmlFor="input-email"><div className="input-text">Email:</div></label>
+                            <input id="input-email" type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email" />
+                        </div>
+                        <div className="input-box">
+                            <label htmlFor="input-password"><div className="input-text">Password:</div></label>
+                            <input id="input-password" type="password" value={this.state.password} onChange={this.update('password')} placeholder="Password" />
+                        </div>
+                        {this.renderErrors()}                        
+                        <input className="input-box" type="submit" value="Sign In" />
+                        <div className="below-signin">rememberme/needhelp</div>
+                        <div className="below-signin">DemoLoginLikeFb</div>
+                        <p>New to Netlix?</p>
+                        <p>No ads. Watch anywhere. Cancel Anytime.</p>
+                        <input className="input-box" type="submit" value="Log In As Demo User >" onClick={this.handleDemoUser}/>
                     </div>
                 </form>
             </div>
