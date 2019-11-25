@@ -33,7 +33,7 @@ class LoginForm extends React.Component {
         });
     }
 
-    handleSubmit(e) {
+    handleDemoUser(e) {
         e.preventDefault();
         let user = {
             email: "demo@demo.demo",

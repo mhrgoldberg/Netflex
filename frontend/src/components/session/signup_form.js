@@ -6,7 +6,6 @@ class SignupForm extends React.Component {
         super(props);
         this.state = {
             email: '',
-            handle: '',
             password: '',
             password2: '',
             errors: {}
@@ -34,7 +33,6 @@ class SignupForm extends React.Component {
         e.preventDefault();
         let user = {
             email: this.state.email,
-            handle: this.state.handle,
             password: this.state.password,
             password2: this.state.password2
         };
@@ -64,12 +62,6 @@ class SignupForm extends React.Component {
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
-                        />
-                        <br />
-                        <input type="text"
-                            value={this.state.handle}
-                            onChange={this.update('handle')}
-                            placeholder="Handle"
                         />
                         <br />
                         <input type="password"
