@@ -70,49 +70,52 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <h1>Sign In</h1>
-        <p>Sign in to start watching or restart your membership</p>
-        <form onSubmit={this.handleSubmit}>
-          <div className="login-form-form">
-            <div className="input-box">
-              <label htmlFor="input-email">
-                <div className="input-text">Email:</div>
-              </label>
-              <input
-                id="input-email"
-                type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-                placeholder="Email"
-              />
+      <div className="to-flex-row-center login-bg">
+        <div className="login-form-container">
+          <h1>Sign In</h1>
+          <h2>Sign in to start watching or restart your membership</h2>
+          <form onSubmit={this.handleSubmit}>
+            <div className="login-form-form">
+              <div className="input-box2">
+                <label htmlFor="input-email">
+                  <div className="input-text">Email:</div>
+                </label>
+                <input
+                  id="input-email"
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                />
+              </div>
+              <div className="input-box2">
+                <label htmlFor="input-password">
+                  <div className="input-text">Password:</div>
+                </label>
+                <input
+                  id="input-password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                />
+              </div>
+              {this.renderErrors()}
+              <button className="input-box2 signin-button">
+                <div>Sign In</div>
+              </button>
+
+              <div className="linebreak"></div>
+              <button className="demo-input" onClick={this.handleDemoUser}>
+                <div>Login as Demo User</div>
+              </button>
+              <div className="linebreak"></div>
+              <button className="demo-input" onClick={this.handleSignupButton}>
+                <div>Sign Up ></div>
+              </button>
             </div>
-            <div className="input-box">
-              <label htmlFor="input-password">
-                <div className="input-text">Password:</div>
-              </label>
-              <input
-                id="input-password"
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                placeholder="Password"
-              />
-            </div>
-            {this.renderErrors()}
-            <input className="input-box" type="submit" value="Sign In" />
-            <div className="below-signin">rememberme/needhelp</div>
-            <div className="below-signin">DemoLoginLikeFb</div>
-            <p>New to Netlix?</p>
-            <p>No ads. Watch anywhere. Cancel Anytime.</p>
-            <input
-              className="input-box"
-              type="submit"
-              value="Log In As Demo User >"
-              onClick={this.handleDemoUser}
-            />
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     );
   }
