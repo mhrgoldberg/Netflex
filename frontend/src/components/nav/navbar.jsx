@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./navbar.css";
+
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -19,19 +19,27 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-      <div>
-        <div className="l-side-buttons">
+      <div className="nav-bar-links">
+        <div className="l-side-nav-bar-links">
           <Link to={"/movies"}>All Movies</Link>
           <Link to={"/my-list"}>My List</Link>
         </div>
-        <div>
-          <button onClick={this.logoutUser}>Logout</button>
+        <div className="r-side-nav-bar-links">
+          
+        <div className="dropdown">
+          <div className="nav-bar-logo"></div>
+          <i className="fas fa-caret-down"></i>
+            <div className="up-arrow"></div>
+            <ul className="dropdown-content">
+              <li key="logout" onClick={this.logoutUser}>logout</li>
+            </ul>
+          </div>
         </div>
       </div>
       );
     } else {
       return (
-        <div className="r-side-buttons">
+        <div className="r-side-nav-bar-links">
           <Link to={"/signup"}>Signup</Link>
           <Link to={"/login"}>Login</Link>
         </div>
@@ -41,9 +49,11 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Chirper</h1>
-        {this.getLinks()}
+      <div className="nav-bar">
+        <div className="nav-bar-content">
+          <h1>Netflex</h1>
+          {this.getLinks()}
+        </div>
       </div>
     );
   }
