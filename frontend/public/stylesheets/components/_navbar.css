@@ -43,7 +43,7 @@
 
 .nav-bar-content a {
   margin-top: 10px;
-  color: white;
+  color: cyan;
   padding: 10px;
 }
 
@@ -56,7 +56,8 @@
 }
 
 .nav-bar h1 {
-  color: red;
+  color: violet;
+  padding: 0; 
 }
 
 .dropdown {
@@ -101,7 +102,7 @@
 }
 
 .dropdown-content li{
-  color: white;
+  color: cyan;
 }
 
 .up-arrow {
