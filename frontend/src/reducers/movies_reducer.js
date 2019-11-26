@@ -1,16 +1,13 @@
 import { RECEIVE_MOVIES, RECEIVE_MOVIE } from '../actions/movie_actions';
 
-const MoviesReducer = (state = {}, action) => {
+const MoviesReducer = (state = {allMovies: [], selectedMovie: {}}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_MOVIES:
-      action.movies.forEach(movie => {
-        newState[movie.id] = movie;  //or newState[movie._id] ? newState[movie["_id"]]?
-      });
-      return newState;
+      return Object.assign(newState, {allMovies: action.movies.data});
     case RECEIVE_MOVIE:
-      newState[action.movie.id] = action.movie;  //also not sure abt this one (same as above)
+      newState['selectedMovie'] = action.movie.data; 
       return newState;
     default:
       return state;
