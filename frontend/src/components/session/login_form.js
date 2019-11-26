@@ -22,10 +22,10 @@ class LoginForm extends React.Component {
     this.parseInputPassword = this.parseInputPassword.bind(this);
   }
 
-  // Once the user has been authenticated, redirect to the Tweets page
+  // Once the user has been authenticated, redirect to the movies page
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push("/");
+      this.props.history.push("/movies");
     }
 
     // Set or clear errors
