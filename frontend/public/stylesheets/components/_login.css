@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Arizonia&display=swap');
+
 div {
   color: white;
 }
 
 h1 {
   font-size: 32px;
-  font-weight: 700px;
+  font-weight: 100px;
   padding-bottom: 16px;
-    color: white;
-  font-family: sans-serif;
+  color: transparent;
+
+  font-family: 'Arizonia', cursive;
 }
 
 h2 {
@@ -105,12 +108,30 @@ p {
 
 .input-text {
   height: 5px;
-  font-size: 30px;
+  font-size: 16px;
+  font-weight: 400;
   overflow: visible;
+  padding-left: 20px;
+  margin-top: 16px;
+
+}
+
+.input-text-clicked {
+  height: 5px;
+  font-size: 10px;
+  overflow: visible;
+  padding-left: 20px;
+  margin-top: 5px;
 }
 
 input {
   height: 30px;
+}
+
+.login-form-container input {
+  padding-left: 20px;
+  padding-top: 7px;
+  color: white;
 }
 
 .input-box2 input[type="text"] {
@@ -139,4 +160,11 @@ input {
 
 .input-box2 input[type="password"]:focus {
   outline: 0;
+}
+
+.logo-signin {
+  font-size: 50px;
+  font-weight: 400;
+  -webkit-text-stroke: 1px violet;
+  text-shadow: 2px 2px 5px violet;
 }

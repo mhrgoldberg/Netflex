@@ -8,12 +8,18 @@ class LoginForm extends React.Component {
     this.state = {
       email: "",
       password: "",
-      errors: {}
+      errors: {},
+      clickEmail: false,
+      clickPw: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
+    this.clickEmail = this.clickEmail.bind(this);
+    this.clickPw = this.clickPw.bind(this);
+    this.parseInputEmail = this.parseInputEmail.bind(this);
+    this.parseInputPassword = this.parseInputPassword.bind(this);
   }
 
   // Once the user has been authenticated, redirect to the Tweets page
@@ -55,6 +61,37 @@ class LoginForm extends React.Component {
     this.props.login(user);
   }
 
+  parseInputEmail(e) {
+    if (this.state.clickEmail) {
+      return <div className="input-text-clicked">Email:</div>;
+    } else {
+      return <div className="input-text">Email:</div>;
+    }
+  }
+
+  clickEmail() {
+    if (this.state.clickEmail) {
+      this.setState({ clickEmail: false });
+    } else {
+      this.setState({ clickEmail: true });
+    }
+  }
+    parseInputPassword(e) {
+    if (this.state.clickPw) {
+      return <div className="input-text-clicked">Password:</div>;
+    } else {
+      return <div className="input-text">Password:</div>;
+    }
+  }
+
+  clickPw() {
+   if (this.state.clickPw) {
+     this.setState({ clickPw: false });
+   } else {
+     this.setState({ clickPw: true });
+   }
+  }
+
   // Render the session errors if there are any
   renderErrors() {
     return (
@@ -72,32 +109,32 @@ class LoginForm extends React.Component {
     return (
       <div className="to-flex-row-center login-bg">
         <div className="login-form-container">
-          <h1>Sign In</h1>
+          <h1 className="logo-signin">Sign In</h1>
           <h2>Sign in to start watching or restart your membership</h2>
           <form onSubmit={this.handleSubmit}>
             <div className="login-form-form">
               <div className="input-box2">
-                <label htmlFor="input-email">
-                  <div className="input-text">Email:</div>
-                </label>
+                <label htmlFor="input-email">{this.parseInputEmail()}</label>
                 <input
                   id="input-email"
                   type="text"
                   value={this.state.email}
                   onChange={this.update("email")}
-                  placeholder="Email"
+                  placeholder=""
+                  onClick={this.clickEmail}
                 />
               </div>
               <div className="input-box2">
                 <label htmlFor="input-password">
-                  <div className="input-text">Password:</div>
+                  {this.parseInputPassword()}
                 </label>
                 <input
                   id="input-password"
                   type="password"
+                  onClick={this.clickPw}
                   value={this.state.password}
                   onChange={this.update("password")}
-                  placeholder="Password"
+                  placeholder=""
                 />
               </div>
               {this.renderErrors()}
