@@ -39,10 +39,11 @@
 .r-side-nav-bar-links {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .nav-bar-content a {
-  margin-top: 10px;
+  margin-top: 5px;
   color: cyan;
   padding: 10px;
 }
@@ -53,10 +54,12 @@
   width: 50px;
   background-size: 50px 50px;
   margin: 2px;
+  border-radius: 3px;
 }
 
 .nav-bar h1 {
   color: violet;
+  font-size: 40px;
   padding: 0; 
 }
 
@@ -71,7 +74,6 @@
 
 .dropdown-content li {
   float: none;
-  color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -116,4 +118,82 @@
   position: absolute;
   top: 80px;
   left: 2vw;
+}
+
+.search-form input[type=search] {
+	width: 15px;
+	padding-left: 10px;
+	color: white;
+  cursor: pointer;
+  background: rgb(20, 20, 20);
+}
+.search-form input[type=search]:hover {
+	background-color: rgb(20, 20, 20);
+}
+.search-form input[type=search]:focus {
+	width: 130px;
+	padding-left: 32px;
+	color: cyan;
+	background-color: rgb(20, 20, 20);
+	cursor: auto;
+}
+.search-form input:-moz-placeholder {
+	color: violet;
+}
+.search-form input::-webkit-input-placeholder {
+	color: violet;
+}
+
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+
+input[type=search] {
+  background-image: url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png);
+  background-repeat: no-repeat;
+	border: solid 1px violet;
+	padding: 6px 10px 6px 32px;
+	width: 55px;
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=search]:focus {
+	width: 130px;
+	background-color: cyan;
+	border-color: cyan;
+	
+	-webkit-box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+	-moz-box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+	box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+
+input:-moz-placeholder {
+	color: #999;
+}
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+.search-form{
+  margin-right: 30px;
+}
+
+.nav-bar i{
+  margin: 5px;
+  font-size: 20px;
+  color: violet;
 }
