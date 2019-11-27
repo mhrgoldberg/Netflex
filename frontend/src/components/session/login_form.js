@@ -64,20 +64,26 @@ class LoginForm extends React.Component {
   parseInputEmail(e) {
     if (this.state.clickEmail) {
       return <div className="input-text-clicked">Email:</div>;
+    } else if (this.state.email.length > 0) {
+      return <div className="input-text-clicked">Email:</div>;
     } else {
       return <div className="input-text">Email:</div>;
     }
   }
 
-  clickEmail() {
+  clickEmail(e) {
+    // debugger;
     if (this.state.clickEmail) {
       this.setState({ clickEmail: false });
     } else {
       this.setState({ clickEmail: true });
     }
   }
-    parseInputPassword(e) {
+
+  parseInputPassword(e) {
     if (this.state.clickPw) {
+      return <div className="input-text-clicked">Password:</div>;
+    } else if (this.state.password.length > 0) {
       return <div className="input-text-clicked">Password:</div>;
     } else {
       return <div className="input-text">Password:</div>;
@@ -85,11 +91,11 @@ class LoginForm extends React.Component {
   }
 
   clickPw() {
-   if (this.state.clickPw) {
-     this.setState({ clickPw: false });
-   } else {
-     this.setState({ clickPw: true });
-   }
+    if (this.state.clickPw) {
+      this.setState({ clickPw: false });
+    } else {
+      this.setState({ clickPw: true });
+    }
   }
 
   // Render the session errors if there are any
@@ -109,8 +115,8 @@ class LoginForm extends React.Component {
     return (
       <div className="to-flex-row-center login-bg">
         <div className="login-form-container">
-          <h1 className="logo-signin">Sign In</h1>
-          <h2>Sign in to start watching or restart your membership</h2>
+          <h1 className="logo-signin">Log In</h1>
+          <h2>Log in to start watching or restart your membership</h2>
           <form onSubmit={this.handleSubmit}>
             <div className="login-form-form">
               <div className="input-box2">
@@ -122,6 +128,7 @@ class LoginForm extends React.Component {
                   onChange={this.update("email")}
                   placeholder=""
                   onClick={this.clickEmail}
+                  onBlur={this.clickEmail}
                 />
               </div>
               <div className="input-box2">
@@ -132,14 +139,28 @@ class LoginForm extends React.Component {
                   id="input-password"
                   type="password"
                   onClick={this.clickPw}
+                  onBlur={this.clickPw}
                   value={this.state.password}
                   onChange={this.update("password")}
                   placeholder=""
                 />
               </div>
+
+              {/* <div className="input-box2 floating-label-wrap">
+                <input
+                  type="text"
+                  className="floating-label-field floating-label-field--s3"
+                  id="field-1"
+                  placeholder="Test"
+                />
+                <label for="field-1" className="floating-label">
+                  Test
+                </label>
+              </div> */}
+
               {this.renderErrors()}
-              <button className="input-box2 signin-button">
-                <div>Sign In</div>
+              <button className="demo-input">
+                <div className="pointer">Log In</div>
               </button>
 
               <div className="linebreak"></div>
