@@ -6,6 +6,7 @@
   background-image: linear-gradient(rgb(37, 37, 37), black);
   align-items: center;
   justify-content: space-between;
+  padding-top: 10px;
   position: sticky;
   z-index: 2;
   
@@ -32,18 +33,21 @@
 
 
 .l-side-nav-bar-links {
+  margin-top: 5px;
   display: flex;
   flex-direction: row;
 }
 
 .r-side-nav-bar-links {
+  margin-top: 2px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
+  bottom: 1px;
 }
 
 .nav-bar-content a {
-  margin-top: 5px;
   color: cyan;
   padding: 10px;
 }
@@ -59,7 +63,7 @@
 
 .nav-bar h1 {
   color: violet;
-  font-size: 40px;
+  font-size: 50px;
   padding: 0; 
   cursor: pointer;
 }
@@ -196,7 +200,7 @@ input::-webkit-input-placeholder {
 .search-form i {
   position: absolute;
   font-size: 12px;
-  top: 23px;
+  top: 34px;
   margin-left: 12px;
   margin-right: 5px;
 }
