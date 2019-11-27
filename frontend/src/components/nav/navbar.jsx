@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./navbar.css";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -14,24 +13,37 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
-
-
   getLinks() {
     if (this.props.loggedIn) {
       return (
-      <div>
-        <div className="l-side-buttons">
-          <Link to={"/movies"}>All Movies</Link>
-          <Link to={"/my-list"}>My List</Link>
+        <div className="nav-bar-links">
+          <div className="l-side-nav-bar-links">
+            <Link to={"/movies"}>All Movies</Link>
+            <Link to={"/my-list"}>My List</Link>
+          </div>
+          <div className="r-side-nav-bar-links">
+            <form className="search-form">
+              <div className="input-container">
+                <i className="fas fa-search"></i>
+                <input type="search" placeholder="Search" />
+              </div>
+            </form>
+            <div className="dropdown">
+              <div className="nav-bar-logo"></div>
+              <i className="fas fa-angle-down"></i>
+              <div className="up-arrow"></div>
+              <ul className="dropdown-content">
+                <li key="logout" onClick={this.logoutUser}>
+                  logout
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div>
-          <button onClick={this.logoutUser}>Logout</button>
-        </div>
-      </div>
       );
     } else {
       return (
-        <div className="r-side-buttons">
+        <div className="r-side-nav-bar-links">
           <Link to={"/signup"}>Signup</Link>
           <Link to={"/login"}>Login</Link>
         </div>
@@ -41,9 +53,13 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Chirper</h1>
-        {this.getLinks()}
+      <div className="nav-bar">
+        <div className="nav-bar-content">
+          <Link to="/login">
+            <h1>Netflex</h1>
+          </Link>
+          {this.getLinks()}
+        </div>
       </div>
     );
   }
