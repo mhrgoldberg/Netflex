@@ -55,7 +55,9 @@ class NavBar extends React.Component {
     return (
       <div className="nav-bar">
         <div className="nav-bar-content">
-          <Link to="/login"><h1>Netflex</h1></Link>
+          <Link to="/login">
+            <h1>Netflex</h1>
+          </Link>
           {this.getLinks()}
         </div>
       </div>
