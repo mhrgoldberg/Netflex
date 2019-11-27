@@ -114,7 +114,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="to-flex-row-center login-bg">
-        <div className="login-form-container">
+        <div className="login-form-container login-fix">
           <h1 className="logo-signin">Log In</h1>
           <h2>Log in to start watching or restart your membership</h2>
           <form onSubmit={this.handleSubmit}>

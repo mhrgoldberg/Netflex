@@ -47,9 +47,12 @@ p {
 }
 
 .login-form-container {
+  margin-top: 50px;
+  margin-bottom: 40px;
   width: 314px;
-  padding: 60px 68px 40px 68px;
+  padding: 30px 68px 0px 68px;
   background-color: rgba(0, 0, 0, 0.75);
+  height: 420px;
 
 }
 
@@ -104,6 +107,8 @@ p {
 .demo-input:hover {
   cursor: pointer;
 }
+
+
 
 
 
@@ -228,4 +233,8 @@ input {
 
 .pointer {
   cursor: pointer;
+}
+
+.login-fix {
+  height: 550px;
 }
