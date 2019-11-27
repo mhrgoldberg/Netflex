@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -14,28 +13,30 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
-
-
   getLinks() {
     if (this.props.loggedIn) {
       return (
-      <div className="nav-bar-links">
-        <div className="l-side-nav-bar-links">
-          <Link to={"/movies"}>All Movies</Link>
-          <Link to={"/my-list"}>My List</Link>
-        </div>
-        <div className="r-side-nav-bar-links">
-          
-        <div className="dropdown">
-          <div className="nav-bar-logo"></div>
-          <i className="fas fa-caret-down"></i>
-            <div className="up-arrow"></div>
-            <ul className="dropdown-content">
-              <li key="logout" onClick={this.logoutUser}>logout</li>
-            </ul>
+        <div className="nav-bar-links">
+          <div className="l-side-nav-bar-links">
+            <Link to={"/movies"}>All Movies</Link>
+            <Link to={"/my-list"}>My List</Link>
+          </div>
+          <div className="r-side-nav-bar-links">
+            <form className="search-form">
+              <input type="search" placeholder="Search" />
+            </form>
+            <div className="dropdown">
+              <div className="nav-bar-logo"></div>
+              <i className="fas fa-angle-down"></i>
+              <div className="up-arrow"></div>
+              <ul className="dropdown-content">
+                <li key="logout" onClick={this.logoutUser}>
+                  logout
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
       );
     } else {
       return (
