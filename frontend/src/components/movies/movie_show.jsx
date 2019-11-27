@@ -10,7 +10,6 @@ class MovieShow extends React.Component {
       movie: {},
       loading: true
     }
-   
   }
 
   componentDidMount() {
@@ -26,14 +25,41 @@ class MovieShow extends React.Component {
 
 
   render() {
+    let videoSettings = {
+      controls: "false"
+    }
+
     if (this.state.loading ) {
       return null;
     } else {
       console.log(this.props);
       return (
         <div className="movie-show-player-wrapper">
-          <div className="back-button"><i className="fas fa-arrow-left" onClick={() => this.props.history.push("/movies")}></i></div>
-          <ReactPlayer className="react-player" url={this.state.movie.videoUrl} playing width="100%" height="100%" controls="true" disablePictureInPicture />
+          <div className="back-button">
+            <i className="fas fa-arrow-left" onClick={() => this.props.history.push("/movies")}></i>
+          </div>
+          {/* <iframe width="640" height="360" src="https://www.youtube.com/embed/bTGPfJUJRh0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
+          {/* <video autoplay>
+            <source src="https://www.youtube.com/watch?v=bTGPfJUJRh0" type="video/mp4"></source>
+          </video> */}
+          {/* <iframe width='500' height='294' src={"https://www.youtube.com/embed/bTGPfJUJRh0?&theme=dark&autohide=2&modestbranding=1"} frameborder="0"></iframe> */}
+          {/* <ReactPlayer 
+            className="react-player" 
+            url={this.state.videoUrl}
+            playing 
+            width="120vw" height="120vh" 
+            // aspectRatio="4:3" 
+            controls={false} 
+            volume={0} 
+            muted={true}  
+            // config={{
+            //   youtube: {
+            //     playerVars: { showinfo: 1 }
+            //   }
+            // }}
+          /> */}
+          <div id="youtube-player"></div>
+
         </div>
       );
     }
