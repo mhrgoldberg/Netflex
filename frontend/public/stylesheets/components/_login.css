@@ -9,6 +9,7 @@ h1 {
   font-weight: 100px;
   padding-bottom: 16px;
   color: transparent;
+  cursor: default;
 
   font-family: 'Arizonia', cursive;
 }
@@ -19,6 +20,7 @@ h2 {
   padding-bottom: 16px;
     color: white;
   font-family: sans-serif;
+  cursor: default;
 }
 
 p {
@@ -53,6 +55,7 @@ p {
 
 .login-bg {
   background-color: gray;
+  height: 100%;
 }
 
 .input-box2 {
@@ -93,18 +96,11 @@ p {
 
 }
 
-.signin-button {
-  margin-top: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 700;
-  border: 1px solid violet;
-  outline-style: double;
-  outline-color: violet;
-  box-shadow: 2px 2px 5px violet;
+.demo-input:hover {
+  cursor: pointer;
 }
+
+
 
 .input-text {
   height: 5px;
@@ -147,6 +143,10 @@ input {
   outline: 0;
 }
 
+.input-box2:hover {
+  cursor: text;
+}
+
 
 
 .input-box2 input[type="password"] {
@@ -167,4 +167,60 @@ input {
   font-weight: 400;
   -webkit-text-stroke: 1px violet;
   text-shadow: 2px 2px 5px violet;
+}
+
+.floating-label-field {
+  border-width: 0;
+  color: rgba(#2c3e50, .75);
+  line-height: 1;
+  font: inherit;
+  padding: 1.5em;
+  height: 4em;
+  position: relative;
+}
+
+.floating-label-field:focus {
+  outline: 0;
+  box-shadow: 0;
+}
+
+.floating-label-field::placeholder {
+  color: transparent;
+}
+
+
+
+.floating-label-field.floating-label {
+    line-height: 1;
+    font: inherit;
+    padding: 1.5em;
+    height: 4em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    user-select: none;
+
+}
+
+
+
+  
+
+
+.signin-button {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid violet;
+  outline-style: double;
+  outline-color: violet;
+  box-shadow: 2px 2px 5px violet;
+  cursor: default;
+}
+
+.pointer {
+  cursor: pointer;
 }

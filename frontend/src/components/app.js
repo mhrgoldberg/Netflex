@@ -10,7 +10,7 @@ import MovieIndexContainer from "./movies/movie_index_container";
 import MovieShowContainer from "./movies/movie_show_container";
 
 const App = () => (
-  <div>
+  <div className="main-content">
     <NavBarContainer />
     <Switch>
       <AuthRoute exact path="/" component={MainPage} />
