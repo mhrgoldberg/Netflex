@@ -56,6 +56,11 @@ p {
 .login-bg {
   background-color: gray;
   height: 100%;
+  width: 100vw;
+  background-image: url('../../images/netfleximagetestsmall.png');
+  /* background-position: center; */
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .input-box2 {
