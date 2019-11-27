@@ -50,9 +50,9 @@
 
 .nav-bar-logo {
   background-image: url("../../images/2014-07-01-richard32.jpg");
-  height: 50px;
-  width: 50px;
-  background-size: 50px 50px;
+  height: 40px;
+  width: 40px;
+  background-size: 40px 40px;
   margin: 2px;
   border-radius: 3px;
 }
@@ -124,6 +124,7 @@
 	color: white;
   cursor: pointer;
   background: rgb(20, 20, 20);
+  height: 20px;
 }
 /* .search-form input[type=search]:hover {
 	background-color: rgb(20, 20, 20);
@@ -154,8 +155,6 @@ input::-webkit-search-cancel-button {
 
 
 input[type=search] {
-  background-image: url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png);
-  background-repeat: no-repeat;
 	border: solid 1px violet;
 	padding: 6px 10px 6px 32px;
 	width: 55px;
