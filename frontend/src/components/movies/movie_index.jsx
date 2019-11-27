@@ -34,17 +34,18 @@ class MovieIndex extends React.Component {
       return (<div>There are no Movies</div>)
     } else {
       return (
-        <div>
-          <h2>All Movies</h2>
-          {this.state.movies.map(movie => (
-            <div>
-              <h2>{movie.title}</h2>
-              <h2>{movie.instructor}</h2>
-              <h2>{movie.year}</h2>
+        <div className="movie-index-section" >
+          {this.state.movies.map((movie, i) => (
+            <div key={i} className="movie-index-item" onClick={this.handleMovieClick(movie._id)}>
+              <div className="movie-index-item-info">
+                <h2 className="movie-index-item-title">{movie.title}</h2>
+                {/* <h4 className="movie-index-item-instructor">{movie.instructor}</h4> */}
+              </div>
+              {/* <h2>{movie.year}</h2> */}
               <img 
+                className="movie-index-item-image" 
                 src={movie.imageUrl} 
                 style={{"max-width": "300px"}} 
-                onClick={this.handleMovieClick(movie._id)}
               />
             </div>
           ))}

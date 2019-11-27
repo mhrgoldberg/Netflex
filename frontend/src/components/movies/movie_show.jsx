@@ -1,5 +1,6 @@
 import React from 'react';
-import { Player, ControlBar, VolumeMenuButton, BigPlayButton } from 'video-react';
+// import { Player, ControlBar, VolumeMenuButton, BigPlayButton } from 'video-react';
+import ReactPlayer from 'react-player'
 
 class MovieShow extends React.Component {
   constructor(props) {
@@ -28,18 +29,11 @@ class MovieShow extends React.Component {
     if (this.state.loading ) {
       return null;
     } else {
-      console.log(this.state);
+      console.log(this.props);
       return (
-        <div>
-          <Player
-            autoPlay 
-            src={this.state.movie.videoUrl} 
-          >
-            <ControlBar disableCompletely={true}>
-              {/* <VolumeMenuButton />
-              <BigPlayButton disabled /> */}
-            </ControlBar>
-          </Player>
+        <div className="movie-show-player-wrapper">
+          <div className="back-button"><i className="fas fa-arrow-left" onClick={() => this.props.history.push("/movies")}></i></div>
+          <ReactPlayer className="react-player" url={this.state.movie.videoUrl} playing width="100%" height="100%" controls="true" disablePictureInPicture />
         </div>
       );
     }

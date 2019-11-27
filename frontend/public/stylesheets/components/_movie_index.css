@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Carter+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Boogaloo&display=swap');
+html, body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+  position: relative;
+  top: 0;
+}
+
+#root > div {
+  height: 100%;
+  background-color: black;
+}
+
+.movie-index-section {
+  background-color: black;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  max-width: 100%;
+  padding: 100px 40px;
+}
+
+.movie-index-item {
+  position: relative;
+  /* display: flex; */
+  /* flex-direction: column; */
+  transition: transform .2s;
+  width: 200px;
+  margin: 10px;
+  height: 130px;
+  text-align: center;
+}
+
+.movie-index-item:hover {
+  transform: scale(1.2);
+  -webkit-box-shadow:0 0 30px rgb(209, 103, 255); 
+  -moz-box-shadow: 0 0 30px rgb(209, 103, 255); 
+  box-shadow:0 0 30px rgb(209, 103, 255);
+  cursor: pointer;
+  z-index: 3;
+}
+
+.movie-index-item-info {
+  position: relative;
+}
+
+.movie-index-item-title, .movie-index-item-instructor {
+  color: white;
+  position: absolute;
+  font-family: "Boogaloo";
+  font-size: 22px;
+  left: 10px;
+  width: 90%;
+  /* width: 100%; */
+  text-align: center;
+  top: 60px;
+  bottom: 5px;
+  padding: 2px;
+  height: 30px;
+  text-shadow:1px 1px 10px rgb(0, 0, 0), 1px 1px 10px rgb(0, 0, 0);
+}
+
+.movie-index-item-image {
+  max-width:100%;
+  max-height:100%;
+}
+
+.movie-show-main {
+  min-height: min-content;
+}
+
+.movie-show-main > div {
+  padding-top: 0;
+  height: 100%;
+}
+
+/* .video-react-video-player {
+  padding-top: 0;
+  margin-top: 0; */
+  /* position: fixed; */
+  /* top: 0; */
+/* } */
+
+.movie-show-player-wrapper {
+  position: relative;
+  height: 100%;
+  /* padding-top: 7% Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.back-button {
+  z-index: 10;
+  position: absolute;
+  top: 15px; 
+  left: 15px;
+  height: 40px;
+  width: 40px;
+}
+
+.fa-arrow-left {
+  height: 40px;
+  width: 40px;
+  font-size: 45px;
+  z-index: 10;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.721);
+  text-decoration: none;  
+    text-shadow: none;  
+    -webkit-transition: 500ms linear 0s;  
+    -moz-transition: 500ms linear 0s;  
+    -o-transition: 500ms linear 0s;  
+    transition: 500ms linear 0s;  
+    outline: 0 none; 
+    background-color:#000; 
+}
+
+.fa-arrow-left:hover {
+  /* text-shadow:1px 1px 10px rgb(58, 252, 255), 1px 1px 10px rgb(0, 0, 0); */
+  color: white;
+  text-shadow: -10px 10px 10px rgb(225, 76, 255), 
+    10px -10px 10px rgb(58, 196, 255);
+    /* 10px 10px 20px rgb(225, 76, 255), */
+    /* -10px -10px 20px rgb(58, 196, 255);  */
+  
+}
