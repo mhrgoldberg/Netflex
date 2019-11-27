@@ -3,7 +3,7 @@
   flex-direction: row;
   height: 68px;
   width: 100%;
-  background: rgb(20, 20, 20);
+  background-image: linear-gradient(rgb(37, 37, 37), black);
   align-items: center;
   justify-content: space-between;
   position: sticky;
@@ -16,7 +16,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0 5%;
+  margin: 0 5vw;
   width: 100%;
 }
 
@@ -61,6 +61,7 @@
   color: violet;
   font-size: 40px;
   padding: 0; 
+  cursor: pointer;
 }
 
 .dropdown {
@@ -91,7 +92,9 @@
 .dropdown-content {
   display: none;
   top: 88px;
-  right: 0px;
+  right: 0;
+  margin-right: 5%;
+
   position: absolute;
   min-width: 160px;
   border-radius: 3px;
@@ -115,26 +118,35 @@
   width: 0px;
   position: absolute;
   top: 80px;
-  left: 2vw;
+  left: 14px;
 }
 
 .search-form input[type=search] {
 	width: 65px;
 	padding-left: 30px;
-	color: white;
+	color: cyan;
   cursor: pointer;
   background: rgb(20, 20, 20);
   height: 20px;
+  -webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
 }
 /* .search-form input[type=search]:hover {
 	background-color: rgb(20, 20, 20);
 } */
 .search-form input[type=search]:focus {
-	width: 130px;
 	padding-left: 32px;
 	color: cyan;
 	background-color: rgb(20, 20, 20);
-	cursor: auto;
+  cursor: auto;
+  width: 180px;
+	border-color: violet;
+	
+	-webkit-box-shadow: 0 0 10px rgba(238, 130, 238, 0.5);
+	-moz-box-shadow: 0 0 10px  rgba(238, 130, 238, 0.5);
+	box-shadow: 0 0 10px  rgba(238, 130, 238, 0.5);
 }
 .search-form input:-moz-placeholder {
 	color: rgba(0, 255, 255, 0.438);
@@ -143,12 +155,7 @@
 	color: rgba(0, 255, 255, 0.438);
 }
 
-input[type=search] {
-	-webkit-appearance: textfield;
-	-webkit-box-sizing: content-box;
-	font-family: inherit;
-	font-size: 100%;
-}
+
 input::-webkit-search-cancel-button {
 	display: none; 
 }
@@ -166,14 +173,7 @@ input[type=search] {
 	-moz-transition: all .5s;
 	transition: all .5s;
 }
-input[type=search]:focus {
-	width: 130px;
-	border-color: violet;
-	
-	-webkit-box-shadow: 0 0 10px rgba(238, 130, 238, 0.5);
-	-moz-box-shadow: 0 0 10px  rgba(238, 130, 238, 0.5);;
-	box-shadow: 0 0 10px  rgba(238, 130, 238, 0.5);;
-}
+
 
 
 input:-moz-placeholder {
@@ -200,3 +200,4 @@ input::-webkit-input-placeholder {
   margin-left: 12px;
   margin-right: 5px;
 }
+
