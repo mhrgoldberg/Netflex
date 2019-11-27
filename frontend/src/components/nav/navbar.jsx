@@ -23,7 +23,10 @@ class NavBar extends React.Component {
           </div>
           <div className="r-side-nav-bar-links">
             <form className="search-form">
-              <input type="search" placeholder="Search" />
+              <div className="input-container">
+                <i className="fas fa-search"></i>
+                <input type="search" placeholder="Search" />
+              </div>
             </form>
             <div className="dropdown">
               <div className="nav-bar-logo"></div>

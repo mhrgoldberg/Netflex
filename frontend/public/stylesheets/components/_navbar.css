@@ -92,14 +92,12 @@
   display: none;
   top: 88px;
   right: 0px;
-  border-bottom: 1px solid lightgray;
-  border-left: 1px solid lightgray;
-  border-right: 1px solid lightgray;
   position: absolute;
   min-width: 160px;
+  border-radius: 3px;
   z-index: 1;
   cursor: pointer;
-  background: rgba(20, 20, 20, 0.856);
+  background: rgba(238, 130, 238, 0.671);
 
 }
 
@@ -110,7 +108,7 @@
 .up-arrow {
   display: none;
   background: transparent;
-	border-color:  rgba(20, 20, 20, 0.856) transparent;
+	border-color:   rgba(238, 130, 238, 0.671) transparent;
 	border-style: solid;
 	border-width: 0px 8px 8px 8px;
 	height: 0px;
@@ -121,15 +119,15 @@
 }
 
 .search-form input[type=search] {
-	width: 15px;
-	padding-left: 10px;
+	width: 65px;
+	padding-left: 30px;
 	color: white;
   cursor: pointer;
   background: rgb(20, 20, 20);
 }
-.search-form input[type=search]:hover {
+/* .search-form input[type=search]:hover {
 	background-color: rgb(20, 20, 20);
-}
+} */
 .search-form input[type=search]:focus {
 	width: 130px;
 	padding-left: 32px;
@@ -138,10 +136,10 @@
 	cursor: auto;
 }
 .search-form input:-moz-placeholder {
-	color: violet;
+	color: rgba(0, 255, 255, 0.438);
 }
 .search-form input::-webkit-input-placeholder {
-	color: violet;
+	color: rgba(0, 255, 255, 0.438);
 }
 
 input[type=search] {
@@ -150,7 +148,6 @@ input[type=search] {
 	font-family: inherit;
 	font-size: 100%;
 }
-input::-webkit-search-decoration,
 input::-webkit-search-cancel-button {
 	display: none; 
 }
@@ -172,12 +169,11 @@ input[type=search] {
 }
 input[type=search]:focus {
 	width: 130px;
-	background-color: cyan;
-	border-color: cyan;
+	border-color: violet;
 	
-	-webkit-box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
-	-moz-box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
-	box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+	-webkit-box-shadow: 0 0 10px rgba(238, 130, 238, 0.5);
+	-moz-box-shadow: 0 0 10px  rgba(238, 130, 238, 0.5);;
+	box-shadow: 0 0 10px  rgba(238, 130, 238, 0.5);;
 }
 
 
@@ -196,4 +192,12 @@ input::-webkit-input-placeholder {
   margin: 5px;
   font-size: 20px;
   color: violet;
+}
+
+.search-form i {
+  position: absolute;
+  font-size: 12px;
+  top: 23px;
+  margin-left: 12px;
+  margin-right: 5px;
 }
