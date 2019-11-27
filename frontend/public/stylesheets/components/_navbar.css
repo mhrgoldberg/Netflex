@@ -61,6 +61,7 @@
   color: violet;
   font-size: 40px;
   padding: 0; 
+  cursor: pointer;
 }
 
 .dropdown {
@@ -199,3 +200,4 @@ input::-webkit-input-placeholder {
   margin-left: 12px;
   margin-right: 5px;
 }
+
