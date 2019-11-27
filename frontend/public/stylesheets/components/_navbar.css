@@ -96,17 +96,20 @@
   top: 88px;
   right: 0;
   margin-right: 5%;
-
   position: absolute;
-  min-width: 160px;
-  border-radius: 3px;
-  z-index: 1;
+  min-width: 100px;
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  border-radius: 10em;
+  z-index: 3;
   cursor: pointer;
-  background: rgba(238, 130, 238, 0.671);
+  background: black;
+  border: 6px solid rgba(238, 130, 238, 0.671);
 }
 
 .dropdown-content li {
   color: cyan;
+  text-align: center;
 }
 
 .up-arrow {

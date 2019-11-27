@@ -34,7 +34,7 @@ class NavBar extends React.Component {
               <div className="up-arrow"></div>
               <ul className="dropdown-content">
                 <li key="logout" onClick={this.logoutUser}>
-                  logout
+                  Logout
                 </li>
               </ul>
             </div>
