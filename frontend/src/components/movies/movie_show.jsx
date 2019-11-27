@@ -10,7 +10,6 @@ class MovieShow extends React.Component {
       movie: {},
       loading: true
     }
-   
   }
 
   componentDidMount() {
