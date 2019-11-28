@@ -103,7 +103,7 @@ html, body {
 .back-button {
   z-index: 10;
   position: absolute;
-  top: 15px; 
+  top: 20px; 
   left: 15px;
   height: 40px;
   width: 40px;
@@ -112,7 +112,7 @@ html, body {
 .fa-arrow-left {
   height: 40px;
   width: 40px;
-  font-size: 45px;
+  font-size: 40px;
   z-index: 10;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.721);
@@ -123,7 +123,7 @@ html, body {
     -o-transition: 500ms linear 0s;  
     transition: 500ms linear 0s;  
     outline: 0 none; 
-    background-color:#000; 
+    /* background-color:#000;  */
 }
 
 .fa-arrow-left:hover {
@@ -136,6 +136,10 @@ html, body {
   
 }
 
-.react-player {
-  /* right: 5vw; */
+.movie-show-video {
+  position: relative;
+  bottom: 75px;
 }
+/* .vjs-top-bar {
+  display: none;
+} */
