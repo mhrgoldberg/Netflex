@@ -1,5 +1,4 @@
 import React from 'react';
-// import { withRouter } from 'react-router-dom';
 
 class MovieIndex extends React.Component {
   constructor(props) {
@@ -44,7 +43,7 @@ class MovieIndex extends React.Component {
               {/* <h2>{movie.year}</h2> */}
               <img 
                 className="movie-index-item-image" 
-                src={movie.imageUrl} 
+                src={process.env.PUBLIC_URL + `/images/previews/${movie.imageUrl}`} 
                 style={{"max-width": "300px"}} 
               />
             </div>
