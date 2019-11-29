@@ -32,11 +32,12 @@ class MovieShow extends React.Component {
     } else {
       console.log(this.props);
       return (
+        <div className="movie-show-main">
         <div className="movie-show-player-wrapper">
           <div className="back-button">
             <i className="fas fa-arrow-left" onClick={() => this.props.history.push("/movies")}></i>
           </div>
-          <iframe id="movie-show-video" className="movie-show-video" width="100%" height="110%" src={`https://clipmega.com/embed?v=${this.state.movie.videoUrl}`} frameborder="0" >
+          <iframe id="movie-show-video" className="movie-show-video" width="100%" height="115%" src={`https://clipmega.com/embed?v=${this.state.movie.videoUrl}`} frameborder="0" >
           </iframe>
           {/* <video width="320" height="240" controls >
             <source src="https://clipmega.com/embed?v=bTGPfJUJRh0" type="video/mp4" ></source>
@@ -64,6 +65,7 @@ class MovieShow extends React.Component {
           // /> */}
           {/* <div id="youtube-player"></div> */}
           {/* <script src="https://vjs.zencdn.net/7.5.5/video.js"></script> */}
+        </div>
         </div>
       );
     }
