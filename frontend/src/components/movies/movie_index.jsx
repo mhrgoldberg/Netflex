@@ -1,5 +1,5 @@
 import React from 'react';
-// import ReactPlayer from 'react-player';
+
 
 class MovieIndex extends React.Component {
   constructor(props) {
@@ -49,25 +49,28 @@ class MovieIndex extends React.Component {
         <div className="movie-index-section-main">
           <h1 className="movie-index-section-title">{genre}</h1>
           <div className="movie-index-section">
-            {genreMovies.map((movie, i) => (
-              <div key={i} className="movie-index-item" onClick={this.handleMovieClick(movie._id)}>
-                <div className="movie-index-item-info">
-                  <h2 className="movie-index-item-title">{movie.title}</h2>
+            {genreMovies.map((movie, i) => {
+              return (
+                <div key={i} className="movie-index-item" onClick={this.handleMovieClick(movie._id)}>
+                  <div className="movie-index-item-info">
+                    <h2 className="movie-index-item-title">{movie.title}</h2>
+                  </div>
+                  <img 
+                    className="movie-index-item-image" 
+                    src={process.env.PUBLIC_URL + `/images/previews/${movie.imageUrl}`} 
+                    style={{"maxWidth": "300px"}} 
+                  />
                 </div>
-                <img 
-                  className="movie-index-item-image" 
-                  src={process.env.PUBLIC_URL + `/images/previews/${movie.imageUrl}`} 
-                  style={{"maxWidth": "300px"}} 
-                />
-              </div>
-            ))}
+              )
+            })}
+            <div className="movie-index-item-hidden-last"></div>
           </div>
         </div>
       )
     })
 
 
-    
+
     return (
       <div className="movie-index-main">
         <div className="movie-index-video-hider"></div>

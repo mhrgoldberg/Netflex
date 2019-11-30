@@ -71,6 +71,12 @@ html, body {
   transition: 600ms all;
 }
 
+.movie-index-item-hidden-last {
+  min-width: 50px;
+  min-height: 100px;
+  background-color: rgb(12, 12, 12);
+}
+
 .movie-index-item:hover {
   transform: scale(1.2);
   z-index: 3;
