@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class MovieIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -48,27 +49,49 @@ class MovieIndex extends React.Component {
         <div className="movie-index-section-main">
           <h1 className="movie-index-section-title">{genre}</h1>
           <div className="movie-index-section">
-            {genreMovies.map((movie, i) => (
-              <div key={i} className="movie-index-item" onClick={this.handleMovieClick(movie._id)}>
-                <div className="movie-index-item-info">
-                  <h2 className="movie-index-item-title">{movie.title}</h2>
+            {genreMovies.map((movie, i) => {
+              return (
+                <div key={i} className="movie-index-item" onClick={this.handleMovieClick(movie._id)}>
+                  <div className="movie-index-item-info">
+                    <h2 className="movie-index-item-title">{movie.title}</h2>
+                  </div>
+                  <img 
+                    className="movie-index-item-image" 
+                    src={process.env.PUBLIC_URL + `/images/previews/${movie.imageUrl}`} 
+                    style={{"maxWidth": "300px"}} 
+                  />
                 </div>
-                <img 
-                  className="movie-index-item-image" 
-                  src={process.env.PUBLIC_URL + `/images/previews/${movie.imageUrl}`} 
-                  style={{"max-width": "300px"}} 
-                />
-              </div>
-            ))}
+              )
+            })}
+            <div className="movie-index-item-hidden-last"></div>
           </div>
         </div>
       )
     })
 
-    
     return (
       <div className="movie-index-main">
-        {allSections}
+        <div className="movie-index-video-hider"></div>
+        
+        <div className="movie-index-main-video-wrapper">
+          <div className="movie-index-video-description">
+            Funky.<br />
+            Fun. <br />
+            Fresh. <br />
+            Fitness. <br />
+            <p className="movie-index-video-inner-description">
+              Get off your seat and move to the beat! Netflex is here to get your hips movin, your muscles boomin, your body groovin! 
+            </p>
+          </div>
+          <video 
+            autoPlay 
+            loop  
+            width="100%"
+            src="https://netflex-seeds.s3-us-west-1.amazonaws.com/videos/neflexMainMovie.mp4" 
+            type="video/mp4" 
+          ></video>
+        </div>
+          {allSections}
       </div>
     );
   }
