@@ -34,6 +34,7 @@ html, body {
   height: 100px;
   object-fit: cover;
   position: absolute;
+  z-index: 1;
 }
 
 .movie-index-video-description {
@@ -43,20 +44,20 @@ html, body {
   width: 0;
   font-family: "Bebas Neue";
   left: 50px;
-  top: 50px; 
+  top: 65px; 
   text-shadow:1px 1px 8px rgb(0, 0, 0), 1px 1px 8px rgb(0, 0, 0);
 }
 
 .movie-index-video-inner-description {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 19px;
+  font-weight: 550;
   width: 405px;
   line-height: 27px;
-  margin-top: 25px;
+  margin-top: 18px;
   display: none;
 }
 
-@media only screen and (min-width: 980px) {
+@media only screen and (min-width: 890px) {
   .movie-index-video-inner-description {
     display: block;
   }
@@ -131,7 +132,6 @@ html, body {
 .movie-index-item-title {
   color: white;
   position: absolute;
-  /* font-family: "Boogaloo"; */
   font-family: sans-serif;
   font-weight: 600;
   font-size: 16px;
