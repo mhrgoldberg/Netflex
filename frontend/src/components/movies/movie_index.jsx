@@ -1,4 +1,5 @@
 import React from 'react';
+// import ReactPlayer from 'react-player';
 
 class MovieIndex extends React.Component {
   constructor(props) {
@@ -56,7 +57,7 @@ class MovieIndex extends React.Component {
                 <img 
                   className="movie-index-item-image" 
                   src={process.env.PUBLIC_URL + `/images/previews/${movie.imageUrl}`} 
-                  style={{"max-width": "300px"}} 
+                  style={{"maxWidth": "300px"}} 
                 />
               </div>
             ))}
@@ -65,10 +66,22 @@ class MovieIndex extends React.Component {
       )
     })
 
+
     
     return (
       <div className="movie-index-main">
-        {allSections}
+        <div className="movie-index-video-hider"></div>
+        <div className="movie-index-main-video-wrapper">
+
+          <video 
+            autoPlay 
+            loop  
+            width="100%"
+            src="https://netflex-seeds.s3-us-west-1.amazonaws.com/videos/neflexMainMovie.mp4" type="video/mp4" 
+          >
+          </video>
+        </div>
+          {allSections}
       </div>
     );
   }
