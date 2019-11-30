@@ -69,20 +69,27 @@ class MovieIndex extends React.Component {
       )
     })
 
-
-
     return (
       <div className="movie-index-main">
         <div className="movie-index-video-hider"></div>
+        
         <div className="movie-index-main-video-wrapper">
-
+          <div className="movie-index-video-description">
+            Funky.<br />
+            Fun. <br />
+            Fresh. <br />
+            Fitness. <br />
+            <p className="movie-index-video-inner-description">
+              Get off your seat and move to the beat! Netflex is here to get your hips movin, your muscles boomin, your body groovin! 
+            </p>
+          </div>
           <video 
             autoPlay 
             loop  
             width="100%"
-            src="https://netflex-seeds.s3-us-west-1.amazonaws.com/videos/neflexMainMovie.mp4" type="video/mp4" 
-          >
-          </video>
+            src="https://netflex-seeds.s3-us-west-1.amazonaws.com/videos/neflexMainMovie.mp4" 
+            type="video/mp4" 
+          ></video>
         </div>
           {allSections}
       </div>

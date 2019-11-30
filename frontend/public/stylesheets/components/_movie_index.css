@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Carter+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Boogaloo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
 
 html, body {
   min-height: 100vh;
   width: 100vw;
-  background-color: rgb(12, 12, 12);
+  background-color: rgb(14, 14, 14);
   display: flex;
 }
 
@@ -18,19 +19,51 @@ html, body {
   color: white;
 }
 
+
+.movie-index-main-video-wrapper { 
+  position: relative;
+  height: 100%;
+  min-width: 700px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
 .movie-index-video-hider {
-  /* background-image: linear-gradient(0deg, rgba(255, 255, 255, 0), rgb(0, 0, 0) 80%) ;; */
   background-image: linear-gradient(black, rgba(255, 255, 255, 0));
   width: 100%;
   height: 100px;
   object-fit: cover;
   position: absolute;
-  z-index: 2;
+}
+
+.movie-index-video-description {
+  font-size: 60px;
+  position: relative;
+  height: 0;
+  width: 0;
+  font-family: "Bebas Neue";
+  left: 50px;
+  top: 50px; 
+  text-shadow:1px 1px 8px rgb(0, 0, 0), 1px 1px 8px rgb(0, 0, 0);
+}
+
+.movie-index-video-inner-description {
+  font-size: 20px;
+  font-weight: 600;
+  width: 405px;
+  line-height: 27px;
+  margin-top: 25px;
+  display: none;
+}
+
+@media only screen and (min-width: 980px) {
+  .movie-index-video-inner-description {
+    display: block;
+  }
 }
 
 .movie-index-section-main {
   position: relative;
-  /* margin: 60px 0; */
   margin-top: 25px;
   margin-bottom: 35px;
 }
@@ -50,13 +83,13 @@ html, body {
 }
 
 .movie-index-section {
-  background-color: rgb(12, 12, 12);
+  background-color: rgb(14, 14, 14);
   position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   box-sizing: border-box;
-  padding: 25px 40px;
+  padding: 25px 30px;
   overflow: scroll;
 }
 
@@ -74,7 +107,7 @@ html, body {
 .movie-index-item-hidden-last {
   min-width: 50px;
   min-height: 100px;
-  background-color: rgb(12, 12, 12);
+  background-color: rgb(14, 14, 14);
 }
 
 .movie-index-item:hover {
@@ -169,29 +202,3 @@ html, body {
   position: relative;
   bottom: 60px;
 }
-
-.movie-index-main-video-wrapper {
-  /* max-height: 600px; */
-}
-
-/* .movie-index-main-video {
-  position: relative;
-  object-fit: fill;
-} */
-
-/* video { */
-  /* height: 100%; */
-  /* width: 100%; */
-  /* object-fit: fill; */
-  /* position: absolute; */
-/* } */
-
-/* .react-player > div {
-  position: absolute;
-} */
-
-/* .movie-index-main-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
