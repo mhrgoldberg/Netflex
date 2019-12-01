@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, {useState} from 'react';
+import MovieIndexItem from './movie_index_item';
 
 class MovieIndex extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class MovieIndex extends React.Component {
       movies: [],
       loading: true
     }
-    this.handleMovieClick = this.handleMovieClick.bind(this);
+    // this.handleMovieClick = this.handleMovieClick.bind(this);
   }
 
   componentDidMount() {
@@ -45,23 +45,37 @@ class MovieIndex extends React.Component {
 
     let allSections = Object.keys(genres).sort().map((genre, i) => {
       let genreMovies = genres[genre];
+      
       return (
         <div className="movie-index-section-main">
           <h1 className="movie-index-section-title">{genre}</h1>
           <div className="movie-index-section">
             {genreMovies.map((movie, i) => {
-              return (
-                <div key={i} className="movie-index-item" onClick={this.handleMovieClick(movie._id)}>
-                  <div className="movie-index-item-info">
-                    <h2 className="movie-index-item-title">{movie.title}</h2>
-                  </div>
-                  <img 
-                    className="movie-index-item-image" 
-                    src={process.env.PUBLIC_URL + `/images/previews/${movie.imageUrl}`} 
-                    style={{"maxWidth": "300px"}} 
-                  />
-                </div>
-              )
+              return <MovieIndexItem key={i} movie={movie} onClick={() => this.handleMovieClick(movie._id)}/>
+              // // let [isShown, setIsShown] = useState(false);
+              // return (
+              //   <div key={i} className="movie-index-item" 
+              //     onClick={this.handleMovieClick(movie._id)}
+              //     // onMouseEnter={() => setIsShown(true)}
+              //     // onMouseLeave={() => setIsShown(false)}
+              //   >
+              //     <div className="movie-index-item-info">
+              //       <h2 className="movie-index-item-title">{movie.title}</h2>
+              //     </div>
+              //     <img 
+              //       className="movie-index-item-image" 
+              //       src={process.env.PUBLIC_URL + `/images/previews/${movie.imageUrl}`} 
+              //       style={{"maxWidth": "300px"}} 
+              //     />
+              //     {/* {isShown && (
+              //       <div className="movie-index-item-hover-info"> 
+              //         <p>Year: {movie.year}</p>
+              //         <p>Instructor: {movie.instructor}</p>
+              //         <p>Genre: {movie.genre}</p>
+              //       </div>
+              //     )} */}
+              //   </div>
+              
             })}
             <div className="movie-index-item-hidden-last"></div>
           </div>

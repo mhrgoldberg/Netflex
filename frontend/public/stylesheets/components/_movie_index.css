@@ -15,8 +15,11 @@ html, body {
   top: 0;
 }
 
+/* MOVIE INDEX: */
+
 .movie-index-main {
   color: white;
+  overflow-x: hidden;
 }
 
 
@@ -26,6 +29,7 @@ html, body {
   min-width: 700px;
   max-height: 500px;
   overflow: hidden;
+  margin-bottom: 70px;
 }
 
 .movie-index-video-hider {
@@ -65,9 +69,10 @@ html, body {
 
 .movie-index-section-main {
   position: relative;
-  margin-top: 25px;
-  margin-bottom: 35px;
+  height: 300px;
+  margin: 30px 0px;
 }
+
 
 .movie-index-section-title {
   color: white;
@@ -76,6 +81,7 @@ html, body {
   font-size: 20px;
   margin-left: 40px;
   margin-top: 30px;
+  width: 99%;
 }
 
 ::-webkit-scrollbar {
@@ -90,8 +96,8 @@ html, body {
   flex-direction: row;
   flex-wrap: nowrap;
   box-sizing: border-box;
-  padding: 25px 30px;
-  overflow: scroll;
+  padding: 30px 30px;
+  overflow-x: scroll;
 }
 
 .movie-index-item {
@@ -103,6 +109,11 @@ html, body {
   font-size: 20px;
   cursor: pointer;
   transition: 600ms all;
+  overflow: hidden;
+}
+
+.movie-index-item:hover {
+  height: 175px;
 }
 
 .movie-index-item-hidden-last {
@@ -114,10 +125,10 @@ html, body {
 .movie-index-item:hover {
   transform: scale(1.2);
   z-index: 3;
-  -webkit-box-shadow:0 0 30px rgb(209, 103, 255); 
-  -moz-box-shadow: 0 0 30px rgb(209, 103, 255); 
-  box-shadow:0 0 30px rgb(209, 103, 255);
-  cursor: pointer;
+  -webkit-box-shadow:0 0 20px rgb(255, 96, 255); 
+  -moz-box-shadow: 0 0 20px rgb(255, 96, 255); 
+  box-shadow:0 0 20px rgb(255, 96, 255); 
+  cursor: pointer; 
   margin-right: 50px;
   margin-left: 35px;
 }
@@ -134,11 +145,11 @@ html, body {
   position: absolute;
   font-family: sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   max-width: 230px;
   width: 100%;
   text-align: center;
-  top: 70px;
+  top: 50px;
   padding: 2px;
   height: 30px;
   text-shadow:1px 1px 10px rgb(0, 0, 0), 1px 1px 10px rgb(0, 0, 0);
@@ -146,15 +157,33 @@ html, body {
 
 .movie-index-item-image {
   width: 250px;
-  height: 150px;
+  height: 100%;
   object-fit: cover;
 }
 
+.movie-index-item-hover-info {
+  font-size: 13px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  text-shadow:1px 1px 5px rgb(0, 0, 0), 1px 1px 5px rgb(0, 0, 0);
+  z-index: 10;
+}
+
+
+
+
+/* MOVIE SHOW: */
+
 .movie-show-main {
-  max-height: 98%;
-  height: 98%;
+  max-height: 100%;
+  height: 100%;
   position: relative;
   overflow: hidden;
+  min-height: 530px;
+  /* min-width:  */
 }
 
 .movie-show-main > div {
@@ -164,14 +193,16 @@ html, body {
 
 .movie-show-player-wrapper {
   position: relative;
-  height: 100%;
+  /* max-height: 100%; */
+  /* height: 98%; */
+  overflow: hidden;
 }
 
 .back-button {
   z-index: 10;
   position: absolute;
   top: 20px; 
-  left: 15px;
+  left: 20px;
   height: 40px;
   width: 40px;
 }
@@ -179,10 +210,10 @@ html, body {
 .fa-arrow-left {
   height: 40px;
   width: 40px;
-  font-size: 40px;
+  font-size: 50px;
   z-index: 10;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.721);
+  color: rgba(255, 255, 255, 0.755);
   text-decoration: none;  
     text-shadow: none;  
     -webkit-transition: 500ms linear 0s;  
@@ -200,5 +231,5 @@ html, body {
 
 .movie-show-video {
   position: relative;
-  bottom: 60px;
+  bottom: 200px;
 }
