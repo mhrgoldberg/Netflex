@@ -1,5 +1,5 @@
 import React from 'react';
-
+import MovieIndexItem from './movie_index_item';
 
 class MovieIndex extends React.Component {
   constructor(props) {
@@ -45,23 +45,13 @@ class MovieIndex extends React.Component {
 
     let allSections = Object.keys(genres).sort().map((genre, i) => {
       let genreMovies = genres[genre];
+      
       return (
-        <div className="movie-index-section-main">
+        <div key={i} className="movie-index-section-main">
           <h1 className="movie-index-section-title">{genre}</h1>
           <div className="movie-index-section">
-            {genreMovies.map((movie, i) => {
-              return (
-                <div key={i} className="movie-index-item" onClick={this.handleMovieClick(movie._id)}>
-                  <div className="movie-index-item-info">
-                    <h2 className="movie-index-item-title">{movie.title}</h2>
-                  </div>
-                  <img 
-                    className="movie-index-item-image" 
-                    src={process.env.PUBLIC_URL + `/images/previews/${movie.imageUrl}`} 
-                    style={{"maxWidth": "300px"}} 
-                  />
-                </div>
-              )
+            {genreMovies.map((movie, j) => {
+              return <MovieIndexItem key={j} movie={movie} onClick={this.handleMovieClick(movie._id)}/>
             })}
             <div className="movie-index-item-hidden-last"></div>
           </div>
