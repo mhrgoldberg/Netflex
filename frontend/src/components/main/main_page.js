@@ -1,17 +1,21 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class MainPage extends React.Component {
-
-    render() {
-        return (
-            <div>
-                <h1>A Twitter Clone</h1>
-                <footer>
-                    Copyright &copy; 2019 Chirper
-        </footer>
-            </div>
-        );
+  render() {
+    if (this.props.isAuthenticated) {
+      return <Redirect to="/movies" />
+    } else {
+      return <Redirect to="/login" />
     }
+  }
 }
 
-export default MainPage;
+const mSTP = (state) => {
+  return {
+    isAuthenticated: state.session.isAuthenticated
+  }
+}
+
+export default connect(mSTP)(MainPage);

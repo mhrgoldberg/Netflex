@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const MovieIndexItem = (stuff) => {
-  console.log(stuff);
   let {movie} = stuff;
   let [isShown, setIsShown] = useState(false);
   return (

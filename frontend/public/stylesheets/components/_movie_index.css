@@ -27,7 +27,7 @@ html, body {
   position: relative;
   height: 100%;
   min-width: 700px;
-  max-height: 500px;
+  max-height: 520px;
   overflow: hidden;
   margin-bottom: 70px;
 }
@@ -69,7 +69,7 @@ html, body {
 
 .movie-index-section-main {
   position: relative;
-  height: 300px;
+  height: 280px;
   margin: 30px 0px;
 }
 
@@ -80,7 +80,8 @@ html, body {
   font-weight: 600;
   font-size: 20px;
   margin-left: 40px;
-  margin-top: 30px;
+  /* padding-top: 40px; */
+  padding-bottom: 5px;
   width: 99%;
 }
 
@@ -97,7 +98,9 @@ html, body {
   flex-wrap: nowrap;
   box-sizing: border-box;
   padding: 30px 30px;
+  height: 250px;
   overflow-x: scroll;
+  align-items: center;
 }
 
 .movie-index-item {
@@ -108,12 +111,12 @@ html, body {
   margin-right: 15px;
   font-size: 20px;
   cursor: pointer;
-  transition: 600ms all;
+  transition: 500ms all;
   overflow: hidden;
 }
 
 .movie-index-item:hover {
-  height: 175px;
+  height: 160px;
 }
 
 .movie-index-item-hidden-last {
@@ -144,6 +147,7 @@ html, body {
   color: white;
   position: absolute;
   font-family: sans-serif;
+  cursor: pointer;
   font-weight: 600;
   font-size: 18px;
   max-width: 230px;
