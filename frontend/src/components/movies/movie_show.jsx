@@ -27,7 +27,6 @@ class MovieShow extends React.Component {
     if (this.state.loading ) {
       return null;
     } else {
-      console.log(this.props);
       return (
         <div className="movie-show-main">
         <div className="movie-show-player-wrapper">
