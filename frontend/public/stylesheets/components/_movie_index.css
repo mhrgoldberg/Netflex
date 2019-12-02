@@ -25,11 +25,16 @@ html, body {
 
 .movie-index-main-video-wrapper { 
   position: relative;
-  height: 100%;
-  min-width: 700px;
-  max-height: 520px;
+  min-width: 100vw;
+  height: 530px;
   overflow: hidden;
   margin-bottom: 70px;
+}
+
+.movie-index-main-video-wrapper > video {
+  height: 100%;
+  min-width: 100vw;
+  object-fit: cover;
 }
 
 .movie-index-video-hider {
@@ -58,19 +63,56 @@ html, body {
   width: 405px;
   line-height: 27px;
   margin-top: 15px;
-  display: none;
 }
 
-@media only screen and (min-width: 890px) {
-  .movie-index-video-inner-description {
-    display: block;
-  }
+.movie-index-video-description.section {
+  width: 600px;
+  top: 30%;
+  z-index: 10;
 }
+
+.movie-index-video-description.section > .movie-index-video-inner-description {
+  margin-top: 50px;
+  line-height: 30px;
+  width: 500px;
+  font-size: 20px;
+}
+
+.movie-index-video-inner-description > a {
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.movie-index-main-video-wrapper.section {
+  margin-top: 60px;
+}
+
+.movie-index-video-inner-description > a > i {
+  color: white;
+  font-size: 12px;
+  position: relative;
+  bottom: 1px;
+  left: 5px;
+}
+
+.movie-index-video-inner-description > a:hover {
+  color: rgba(255, 255, 255, 0.742);
+}
+
+.movie-index-section-video-cover {
+  background-color: rgba(0, 0, 0, 0.11);
+  z-index: 2;
+  width: 100vw;
+  height: 530px;
+  position: absolute;
+}
+
 
 .movie-index-section-main {
   position: relative;
   height: 280px;
-  margin: 30px 0px;
+  margin-bottom: 30px;
 }
 
 
@@ -79,8 +121,8 @@ html, body {
   font-family: sans-serif;
   font-weight: 600;
   font-size: 20px;
+  padding-top: 20px;
   margin-left: 40px;
-  /* padding-top: 40px; */
   padding-bottom: 5px;
   width: 99%;
 }
