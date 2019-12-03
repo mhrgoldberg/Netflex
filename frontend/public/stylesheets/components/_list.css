@@ -7,6 +7,7 @@
     flex-direction: row;
     flex-flow: wrap;
     align-content: flex-start;
+    box-sizing: border-box;
 }
 
 .list-index-item-hover-info {
@@ -27,3 +28,4 @@
 .list-index-item-hover-info i:hover {
   color: violet;
 }
+

@@ -6,12 +6,15 @@ const ListsReducer = (state = { items: {}, new: undefined }, action) => {
   let newState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_LIST:
-      newState.items = action.list.data;
+      const listItems = {};
+      action.list.data.forEach( listItem => listItems[listItem._id] = listItem);
+      newState.items = listItems;
       return newState;
     case RECEIVE_NEW_ITEM:
       newState.new = action.item.data
       return newState;
     case REMOVE_ITEM:
+      debugger;
       delete newState['items'][action.movieId];
       return newState;
     default:
