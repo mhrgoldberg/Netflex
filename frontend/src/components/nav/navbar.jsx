@@ -1,16 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
+    this.showResults = this.showResults.bind(this);
   }
 
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
+  }
+
+  showResults(val) {
+    // debugger;
+    console.log(val);
+    if (val === "" || val.length <= 0) {
+      return null
+    } else {
+      this.props.search(val).then(() => (this.props.history.push("/search")));
+
+    }
   }
 
   getLinks() {
@@ -25,7 +38,7 @@ class NavBar extends React.Component {
             <form className="search-form">
               <div className="input-container">
                 <i className="fas fa-search"></i>
-                <input type="search" placeholder="Search" />
+                <input type="search" placeholder="Search" onKeyUp={(e) => {this.showResults(e.currentTarget.value)}} />
               </div>
             </form>
             <div className="dropdown">
@@ -65,4 +78,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

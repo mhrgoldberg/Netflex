@@ -7,6 +7,7 @@ import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import MovieIndexContainer from "./movies/movie_index_container";
 import MovieShowContainer from "./movies/movie_show_container";
+import MovieSearchContainer from "./movies/movie_search_container";
 import ListIndexContainer from "./list/list_index_container";
 
 const App = () => (
@@ -19,6 +20,7 @@ const App = () => (
 
       <ProtectedRoute exact path="/movies" component={MovieIndexContainer} />
       <ProtectedRoute exact path="/movies/:movieId" component={MovieShowContainer} />
+      <ProtectedRoute exact path="/search" component={MovieSearchContainer} />
       <ProtectedRoute exact path="/my-list" component={ListIndexContainer} />
     </Switch>
   </div>
