@@ -1,5 +1,5 @@
 import { RECEIVE_MOVIES, RECEIVE_MOVIE } from '../actions/movie_actions';
-import { RECEIVE_LIST } from '../actions/list_actions';
+import { RECEIVE_LIST, REMOVE_ITEM } from '../actions/list_actions';
 
 const MoviesReducer = (state = {allMovies: [], selectedMovie: {}}, action) => {
   Object.freeze(state);
@@ -12,6 +12,10 @@ const MoviesReducer = (state = {allMovies: [], selectedMovie: {}}, action) => {
       return newState;
     case RECEIVE_LIST:
         return Object.assign(newState, {allMovies: action.list.data});
+    case REMOVE_ITEM:
+      debugger
+        delete newState['allMovies'][action.movieId];
+        return newState;
     default:
       return state;
   }

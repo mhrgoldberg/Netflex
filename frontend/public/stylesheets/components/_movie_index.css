@@ -234,7 +234,7 @@ html, body {
 
 .movie-show-main > div {
   padding-top: 0;
-  height: 100vh;
+  height: 100%;
 }
 
 .movie-show-player-wrapper {
