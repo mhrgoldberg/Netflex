@@ -11,16 +11,18 @@ class LoginForm extends React.Component {
       password: "",
       errors: {},
       clickEmail: false,
-      clickPw: false
+      clickPw: false,
+      errorFlag: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
+    // this.renderErrors = this.renderErrors.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
     this.clickEmail = this.clickEmail.bind(this);
     this.clickPw = this.clickPw.bind(this);
     this.parseInputEmail = this.parseInputEmail.bind(this);
     this.parseInputPassword = this.parseInputPassword.bind(this);
+    this.checkErrors = this.checkErrors.bind(this);
   }
 
   // Once the user has been authenticated, redirect to the movies page
@@ -100,19 +102,35 @@ class LoginForm extends React.Component {
   }
 
   // Render the session errors if there are any
-  renderErrors() {
-    return (
-      <ul className="errors-list">
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li className="errors-item" key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
-      </ul>
-    );
+  // renderErrors() {
+  //   if (Object.keys(this.state.errors).length > 0) {
+  //     this.setState({ errorFlag: true })
+  //   } else if (Object.keys(this.state.errors).length < 1) {
+  //     this.setState({ errorFlag: false })
+  //   }
+
+    // return (
+    //   <ul className="errors-list">
+    //     {Object.keys(this.state.errors).map((error, i) => (
+    //       <li className="errors-item" key={`error-${i}`}>
+    //         {this.state.errors[error]}
+    //       </li>
+    //     ))}
+    //   </ul>
+    // );
+  // }
+
+  checkErrors() {
+    if (Object.keys(this.state.errors).length > 0) {
+      return "input-box2 error-box"
+    } else {
+      return "input-box2"
+    }
   }
 
   render() {
+    let error;
+
     return (
       <div className="to-flex-row-center login-bg">
         <div className="login-form-container login-fix">
@@ -120,7 +138,7 @@ class LoginForm extends React.Component {
           <h2>Log in to start watching or restart your membership</h2>
           <form onSubmit={this.handleSubmit}>
             <div className="login-form-form">
-              <div className="input-box2">
+              <div className={this.checkErrors()}>
                 <label htmlFor="input-email">{this.parseInputEmail()}</label>
                 <input
                   id="input-email"
@@ -132,7 +150,7 @@ class LoginForm extends React.Component {
                   onBlur={this.clickEmail}
                 />
               </div>
-              <div className="input-box2">
+              <div className={this.checkErrors()}>
                 <label htmlFor="input-password">
                   {this.parseInputPassword()}
                 </label>
@@ -159,7 +177,7 @@ class LoginForm extends React.Component {
                 </label>
               </div> */}
 
-              {this.renderErrors()}
+              {/* {this.renderErrors()} */}
               <button className="demo-input">
                 <div className="pointer">Log In</div>
               </button>
