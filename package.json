@@ -6,10 +6,10 @@
   "scripts": {
     "start": "node app.js",
     "server": "nodemon app.js",
-    "debug": "node --inspect app.js",
+    "debug": "nodemon --inspect app.js",
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\""
+    "dev": "concurrently \"npm run debug\" \"npm run frontend\""
   },
   "repository": {
     "type": "git",
