@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieIndexItem from './movie_index_item';
+import { findDOMNode } from "react-dom";
 
 class MovieIndex extends React.Component {
   constructor(props) {
@@ -11,6 +12,8 @@ class MovieIndex extends React.Component {
     }
     this.handleMovieClick = this.handleMovieClick.bind(this);
     this.inList = this.inList.bind(this); 
+    this.scrollLeft = this.scrollLeft.bind(this);
+    this.scrollRight = this.scrollRight.bind(this);
   }
 
   componentDidMount() {
@@ -23,6 +26,14 @@ class MovieIndex extends React.Component {
     if (prevProps !== this.props) {
       this.setState({movies: this.props.movies, loading: false});
     }
+  }
+
+  scrollLeft(elementId) {
+    findDOMNode(this.refs[elementId]).scrollLeft -= 600;
+  }
+
+  scrollRight(elementId) {
+    findDOMNode(this.refs[elementId]).scrollLeft += 600;
   }
 
   handleMovieClick(movieId) {
@@ -60,7 +71,6 @@ class MovieIndex extends React.Component {
 
     let allSections = Object.keys(genres).sort().map((genre, i) => {
       let genreMovies = genres[genre].reverse();
-
       
       let newSection;
       if (i % 3 === 0 && i > 0) {
@@ -74,7 +84,7 @@ class MovieIndex extends React.Component {
 
                   <br /> <br />
                   <a onClick={() => document.getElementById('jazzercise').scrollIntoView()}>
-                    Go to Jazzercise <i class="fas fa-chevron-right"></i>
+                    Go to Jazzercise <i className="fas fa-chevron-right"></i>
                   </a>
                 </p>
               </div>
@@ -119,14 +129,22 @@ class MovieIndex extends React.Component {
         }
 
         return (
-          <div>
+          <div ref={(ele) => this.myDiv = ele}>
             {newSection}
             {genre === "Jazzercise" ? <div id="jazzercise"></div> : ""}
             {genre === "Roller Skating" ? <div id="roller-skating"></div> : ""}
 
             <div key={i} className="movie-index-section-main">
+              
               <h1 className="movie-index-section-title">{genre}</h1>
-              <div className="movie-index-section">
+              <div
+                className="left-button"
+                id={`left-button-${i}`}>
+                <i class="fas fa-chevron-left" onClick={() => this.scrollLeft(`section-${i}`)}></i>
+                </div>
+              <div className="movie-index-section" id={`section-${i}`} ref={`section-${i}`}>
+                <div className="movie-index-item-hidden-first"></div>
+                
                 {genreMovies.map((movie, j) => {
                   return <MovieIndexItem 
                     key={j} 
@@ -138,18 +156,31 @@ class MovieIndex extends React.Component {
                   />
                 })}
                 <div className="movie-index-item-hidden-last"></div>
+                </div>
+                <div
+                  className="right-button"
+                  id={`right-button-${i}`}>
+                  <i class="fas fa-chevron-right" onClick={() => this.scrollRight(`section-${i}`)}></i>
+                </div>
               </div>
             </div>
-          </div>
         )
       }
       
       return (
         <div key={i} className="movie-index-section-main">
+          
           {genre === "Jazzercise" ? <div id="jazzercise"></div> : ""}
           {genre === "Roller Skating" ? <div id="roller-skating"></div> : ""}
           <h1 className="movie-index-section-title">{genre}</h1>
-          <div className="movie-index-section">
+          <div
+            className="left-button"
+            id={`left-button-${i}`}>
+            <i class="fas fa-chevron-left" onClick={() => this.scrollLeft(`section-${i}`)}></i>
+          </div>
+          <div className="movie-index-section" id={`section-${i}`} ref={`section-${i}`}>
+            <div className="movie-index-item-hidden-first"></div>
+          
             {genreMovies.map((movie, j) => {
               return <MovieIndexItem 
                 key={j} 
@@ -161,6 +192,13 @@ class MovieIndex extends React.Component {
               />
             })}
             <div className="movie-index-item-hidden-last"></div>
+            
+          </div>
+          <div
+            className="right-button"
+            id={`right-button-${i}`}>
+            <i class="fas fa-chevron-right"
+             onClick={() => this.scrollRight(`section-${i}`)}></i>
           </div>
         </div>
       )
