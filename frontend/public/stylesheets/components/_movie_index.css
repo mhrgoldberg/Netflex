@@ -151,6 +151,7 @@ html, body {
   width: 250px;
   height: 150px;
   margin-right: 5px;
+  margin-bottom: 5px;
   font-size: 20px;
   cursor: pointer;
   transition: 500ms all;

@@ -24,11 +24,11 @@ export const fetchList = userId => dispatch =>
     .then(list => dispatch(receiveList(list)))
     .catch(err => console.log(err));
 
-export const fetchNewItem = () => dispatch =>
-  addListItem()
+export const addNewItem = (item) => dispatch => {
+  return addListItem(item)
     .then(item => dispatch(reciveNewItem(item)))
     .catch(err => console.log(err));
-
+}
 export const deleteItem = () => dispatch => {
   return deleteListItem()
     .then(movie => {
@@ -37,3 +37,4 @@ export const deleteItem = () => dispatch => {
     })
     .catch(err => console.log(err));
 };
+
