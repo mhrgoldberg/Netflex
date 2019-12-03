@@ -1,0 +1,109 @@
+.search-show {
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  margin: 10px 10px 10px 10px;
+  background-color: transparent;
+  padding: 20px;
+}
+
+.search-index-item {
+  padding: 3px;
+  margin: 10px;
+  border: 2px solid rgba(128, 128, 128, 0.358);
+}
+
+.search-index-item:hover {
+  border: 2px solid violet;
+  outline-style: double;
+  outline-color: violet;
+  /* box-shadow: 2px 2px 5px violet; */
+}
+
+
+
+/* .search-index-item:hover {
+  transform: scale(1);
+  z-index: 3;
+  -webkit-box-shadow:0 0 20px rgb(255, 96, 255); 
+  -moz-box-shadow: 0 0 20px rgb(255, 96, 255); 
+  box-shadow:0 0 20px rgb(255, 96, 255); 
+  cursor: pointer; 
+} */
+.search-index-item {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 150px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 500ms all;
+  overflow: hidden;
+}
+
+
+/* .search-index-item:hover {
+  z-index: 3;
+  -webkit-box-shadow:0 0 20px rgb(255, 96, 255); 
+  -moz-box-shadow: 0 0 20px rgb(255, 96, 255); 
+  box-shadow:0 0 20px rgb(255, 96, 255); 
+  cursor: pointer; 
+} */
+
+.search-index-item-info {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.search-index-item-title {
+  color: white;
+  position: absolute;
+  font-family: sans-serif;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  max-width: 230px;
+  width: 100%;
+  text-align: center;
+  top: 50px;
+  padding: 2px;
+  height: 30px;
+  text-shadow:1px 1px 10px rgb(0, 0, 0), 1px 1px 10px rgb(0, 0, 0);
+}
+
+.search-index-item-image {
+  width: 250px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-index-item-hover-info {
+  font-size: 13px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  text-shadow:1px 1px 5px rgb(0, 0, 0), 1px 1px 5px rgb(0, 0, 0);
+  z-index: 10;
+} 
+
+/* .search-show a {
+  border: 1px solid blue;
+} */
+  /* background-color: rgb(14, 14, 14);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  padding: 30px 30px;
+  height: 250px;
+  overflow-x: scroll;
+  align-items: center; */

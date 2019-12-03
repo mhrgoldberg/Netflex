@@ -1,4 +1,4 @@
-import { getMovies, getMovie } from '../util/movie_api_util';
+import { getMovies, getMovie, APISearch } from '../util/movie_api_util';
 
 export const RECEIVE_MOVIES = "RECEIVE_MOVIES";
 export const RECEIVE_MOVIE = "RECEIVE_MOVIE";
@@ -25,3 +25,11 @@ export const fetchMovie = movieId => dispatch => (
     .then(movie => dispatch(receiveMovie(movie)))
     .catch(err => console.log(err))
 );
+
+
+export const search = value => dispatch => (
+  APISearch(value)
+    .then(movies => dispatch(receiveMovies(movies)))
+    .catch(err => console.log(err))
+
+)

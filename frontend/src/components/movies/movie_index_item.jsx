@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const MovieIndexItem = (stuff) => {
-  let {movie} = stuff;
+const MovieIndexItem = (props) => {
+  let {movie} = props;
   let [isShown, setIsShown] = useState(false);
   return (
     <Link to={`/movies/${movie._id}`}>
