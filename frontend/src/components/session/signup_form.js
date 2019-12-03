@@ -61,7 +61,7 @@ class SignupForm extends React.Component {
   }
 
   clickEmail(e) {
-    // debugger;
+
     if (this.state.clickEmail) {
       this.setState({ clickEmail: false });
     } else {
