@@ -15,10 +15,14 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
-  showResults(val) {
-    console.log(val);
-    if (val === "" || val.length <= 0) {
-      return null
+  showResults(e) {
+    console.log(e.currentTarget.value);
+    e.preventDefault();
+    let val = e.currentTarget.value;
+    if (e.keyCode === 13){
+      this.props.search(val).then(() => this.props.history.push("/search"));
+    } else if ((val === "" || val.length <= 0) ) {
+      return null;
     } else {
       this.props.search(val).then(() => (this.props.history.push("/search")));
 
@@ -34,10 +38,10 @@ class NavBar extends React.Component {
             <Link to={"/my-list"}>My List</Link>
           </div>
           <div className="r-side-nav-bar-links">
-            <form className="search-form">
+            <form onSubmit={(e) => e.preventDefault()}className="search-form">
               <div className="input-container">
                 <i className="fas fa-search"></i>
-                <input type="search" placeholder="Search" onKeyUp={(e) => {this.showResults(e.currentTarget.value)}} />
+                <input type="search" placeholder="Search" onKeyUp={(e) => {this.showResults(e)}} />
               </div>
             </form>
             <div className="dropdown">

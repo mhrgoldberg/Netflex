@@ -8,7 +8,7 @@ router.post('/', function(req, res, next) {
   console.log(req.body);
   let q = req.body.body;
 
-  movies.find({title : {$regex: new RegExp(q)}}, {_id: 0, __v: 0}, function (err, data) {res.json(data)}).sort({ date: -1 })
+  movies.find({title : {$regex: q, $options: 'i'}}, function (err, data) {res.json(data)}).sort({ date: -1 })
     .then(movies)
   ;
   

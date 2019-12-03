@@ -32,7 +32,7 @@ export const addNewItem = (item) => dispatch => {
 export const deleteItem = () => dispatch => {
   return deleteListItem()
     .then(movie => {
-      debugger;
+      // debugger;
       return dispatch(removeItem(movie.id));
     })
     .catch(err => console.log(err));
