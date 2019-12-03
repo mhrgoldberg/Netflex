@@ -283,3 +283,6 @@ html, body {
   position: relative;
   bottom: 200px;
 }
+.list-index-item:hover {
+  transform: scale(1);
+}

@@ -14,9 +14,9 @@ export const reciveNewItem = item => ({
   item
 });
 
-export const removeItem = itemId => ({
+export const removeItem = movieId => ({
   type: REMOVE_ITEM,
-  itemId
+  movieId
 });
 
 export const fetchList = userId => dispatch =>
@@ -29,11 +29,10 @@ export const addNewItem = (item) => dispatch => {
     .then(item => dispatch(reciveNewItem(item)))
     .catch(err => console.log(err));
 }
-export const deleteItem = () => dispatch => {
-  return deleteListItem()
-    .then(movie => {
-      // debugger;
-      return dispatch(removeItem(movie.id));
+export const deleteItem = (movieId) => dispatch => {
+  return deleteListItem(movieId)
+    .then(() => {
+      return dispatch(removeItem(movieId));
     })
     .catch(err => console.log(err));
 };

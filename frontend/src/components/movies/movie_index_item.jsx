@@ -4,13 +4,16 @@ import { withRouter } from "react-router-dom";
 const MovieIndexItem = props => {
   let { movie, inList, addListItem, user } = props;
   let [isShown, setIsShown] = useState(false);
+  let [inListState, setInListState] = useState(inList);
+
   let addButton = null;
   {
-    if (!inList) {
+    if (!inListState) {
       addButton = (
         <i
           onClick={(e) => {
             e.stopPropagation();
+            setInListState(true);
             return props.addNewItem({
               user: user.id,
               movie: movie._id

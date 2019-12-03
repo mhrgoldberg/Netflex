@@ -37,9 +37,10 @@ class ListIndex extends React.Component {
     }
     return (
       <div className="list-container">
-        {this.props.movies.allMovies.map((movie, i) => {
+        {this.props.list.map((movie, i) => {
           return (
             <ListIndexItem
+              className="list-index-item"
               key={movie._id}
               movie={movie}
               deleteItem={() => {
