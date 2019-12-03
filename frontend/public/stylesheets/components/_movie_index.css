@@ -166,6 +166,11 @@ html, body {
   outline-color: violet;
 }
 
+.movie-index-item-hidden-first {
+  min-width: 20px;
+  min-height: 50px;
+}
+
 .movie-index-item-hidden-last {
   min-width: 50px;
   min-height: 100px;
@@ -285,4 +290,48 @@ html, body {
 }
 .list-index-item:hover {
   transform: scale(1);
+}
+
+
+
+/* MOVIE INDEX SCROLL BUTTONS: */
+
+.left-button, .right-button {
+  position: absolute;
+  z-index: 5;
+  width: 40px;
+  height: 200px;
+  padding-left: 10px;
+}
+
+.left-button {
+  left: 0px;
+  top: 78px;
+}
+
+.left-button > i, .right-button > i {
+  color: rgb(255, 255, 255);
+  font-size: 38px;
+  cursor: pointer;
+  z-index: 99;
+  position: relative;
+  top: 60px;
+  text-shadow:1px 1px 10px rgb(0, 0, 0), 1px 1px 10px rgb(0, 0, 0);
+}
+
+.left-button>i:hover {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  text-shadow:1px 1px 10px rgb(0, 187, 187), 1px 1px 10px rgb(0, 187, 187);
+}
+
+.right-button {
+  right: 0;
+  top: 80px;
+}
+
+.right-button>i:hover {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  text-shadow:1px 1px 10px rgb(0, 187, 187), 1px 1px 10px rgb(0, 187, 187);
 }
