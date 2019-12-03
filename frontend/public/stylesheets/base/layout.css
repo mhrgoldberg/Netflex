@@ -7,3 +7,28 @@
   height: calc(100% - 68px);
   width: 100%;
 }
+
+.loading-background {
+  background-image: linear-gradient(black, transparent 20%);
+  height: 100%;
+  width: 100%;
+}
+
+.loading-background i {
+  display: flex;
+  align-items: center;
+  font-size: 50px;
+  color: white;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.loading-background p {
+  display: flex;
+  align-items: center;
+  font-size: 50px;
+  color: white;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}

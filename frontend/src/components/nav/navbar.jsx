@@ -21,7 +21,10 @@ class NavBar extends React.Component {
     if (e.keyCode === 13){
       this.props.search(val).then(() => this.props.history.push("/search"));
     } else if ((val === "" || val.length <= 0) ) {
-      return null;
+      return <div className="loading-background">
+      <i className="fas fa-spinner"></i>
+      <p>Loading...</p>
+    </div>;
     } else {
       this.props.search(val).then(() => (this.props.history.push("/search")));
 

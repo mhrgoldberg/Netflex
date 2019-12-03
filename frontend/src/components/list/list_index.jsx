@@ -33,7 +33,10 @@ class ListIndex extends React.Component {
 
   render() {
     if (this.state.loading) {
-      return null;
+      return <div className="loading-background">
+        <i className="fas fa-spinner"></i>
+        <p>Loading...</p>
+      </div>;
     }
     return (
       <div className="search-show">

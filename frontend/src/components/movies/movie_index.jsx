@@ -43,7 +43,10 @@ class MovieIndex extends React.Component {
 
   render() {
     if (this.state.movies.length === 0) {
-      return null;
+      return <div className="loading-background">
+      <i className="fas fa-spinner"></i>
+      <p>Loading...</p>
+    </div>;
     }
     let genres = {};  
     if (this.state.movies.length > 0) {
