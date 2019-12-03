@@ -60,12 +60,13 @@
 }
 
 .nav-bar h1 {
-  color: violet;
+  color: transparent;
   font-size: 50px;
   padding: 0;
   cursor: pointer;
+  -webkit-text-stroke: 1px violet;
+  text-shadow: 2px 2px 5px violet;
 }
-
 .dropdown {
   display: flex;
   flex-direction: row;
