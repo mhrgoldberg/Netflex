@@ -19,7 +19,10 @@ class NavBar extends React.Component {
     e.preventDefault();
     let val = e.currentTarget.value;
     if (e.keyCode === 13){
+      console.log("hit enter");
+      e.currentTarget.value = ""
       this.props.search(val).then(() => this.props.history.push("/search"));
+
     } else if ((val === "" || val.length <= 0) ) {
       return <div className="loading-background">
       <i className="fas fa-spinner"></i>
