@@ -93,6 +93,13 @@ p {
   box-shadow: 2px 2px 5px cyan;
 }
 
+.error-box {
+  border: 1px solid red;
+  outline-style: double;
+  outline-color: red;
+  box-shadow: 2px 2px 5px red;
+}
+
 .demo-input {
   align-items: center;
   background-color: transparent;

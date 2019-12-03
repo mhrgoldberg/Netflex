@@ -22,6 +22,7 @@ class SignupForm extends React.Component {
     this.parseInputEmail = this.parseInputEmail.bind(this);
     this.parseInputPassword = this.parseInputPassword.bind(this);
     this.parseInputPassword2 = this.parseInputPassword2.bind(this);
+    this.checkEmailErrors = this.checkEmailErrors.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -40,6 +41,7 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
+    // debugger;
     e.preventDefault();
     let user = {
       email: this.state.email,
@@ -105,24 +107,71 @@ class SignupForm extends React.Component {
     }
   }
 
-  renderErrors() {
-    return (
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>{this.state.errors[error]}</li>
-        ))}
-      </ul>
-    );
+  // renderErrors() {
+  //   return (
+  //     <ul>
+  //       {Object.keys(this.state.errors).map((error, i) => (
+  //         <li key={`error-${i}`}>{this.state.errors[error]}</li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
+
+  checkEmailErrors() {
+
+    let errors = Object.values(this.state.errors);
+    let output = "input-box2"
+
+    errors.forEach(error => {
+      if (error.includes('Email')) {
+        // debugger;
+        output = "input-box2 error-box"
+      };
+      // debugger;
+      console.log("check email errors hit");
+    })
+    return output
+  }
+
+  checkPwErrors() {
+    let errors = Object.values(this.state.errors);
+    let output = "input-box2"
+
+    errors.forEach(error => {
+      if (error.includes('Password ')) {
+        // debugger;
+        output = "input-box2 error-box"
+      };
+      // debugger;
+      console.log("check pw errors hit");
+    })
+    return output
+  }
+
+  checkPw2Errors() {
+    let errors = Object.values(this.state.errors);
+    let output = "input-box2"
+
+    errors.forEach(error => {
+      if (error.includes('match')) {
+        // debugger;
+        output = "input-box2 error-box"
+      };
+      // debugger;
+      console.log("check pw2 errors hit");
+    })
+    return output
   }
 
   render() {
+    // debugger;
     return (
       <div className="to-flex-row-center login-bg">
         <div className="login-form-container">
           <h1 className="logo-signin">Sign Up</h1>
           <form onSubmit={this.handleSubmit}>
             <div className="login-form-form">
-              <div className="input-box2">
+              <div className={this.checkEmailErrors()}>
                 <label htmlFor="input-email">{this.parseInputEmail()}</label>
                 <input
                   id="input-email"
@@ -134,7 +183,7 @@ class SignupForm extends React.Component {
                   onBlur={this.clickEmail}
                 />
               </div>
-              <div className="input-box2">
+              <div className={this.checkPwErrors()}>
                 <label htmlFor="input-password">
                   {this.parseInputPassword()}
                 </label>
@@ -148,7 +197,7 @@ class SignupForm extends React.Component {
                   placeholder=""
                 />
               </div>
-              <div className="input-box2">
+              <div className={this.checkPw2Errors()}>
                 <label htmlFor="input-password2">
                   {this.parseInputPassword2()}
                 </label>
@@ -166,7 +215,7 @@ class SignupForm extends React.Component {
               <button className="demo-input">
                 <div>Sign Up ></div>
               </button>
-              {this.renderErrors()}
+              {/* {this.renderErrors()} */}
             </div>
           </form>
         </div>
