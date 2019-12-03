@@ -50,13 +50,24 @@
   padding: 10px;
 }
 
-.nav-bar-logo {
-  background-image: url("../../images/2014-07-01-richard32.jpg");
+.nav-bar-logo-container {
   height: 40px;
   width: 40px;
-  background-size: 40px 40px;
+  margin-right: 2px;
+}
+
+.nav-bar-logo {
+  background-image: url("../../images/2014-07-01-richard32.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
   margin: 2px;
   border-radius: 3px;
+
+  /* background-size: cover; */
+  overflow: hidden;
 }
 
 .nav-bar h1 {

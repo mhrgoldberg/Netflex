@@ -49,6 +49,7 @@ p {
 .login-form-container {
   margin-top: 50px;
   margin-bottom: 40px;
+  border-radius: 3px;
   width: 314px;
   padding: 30px 68px 0px 68px;
   background-color: rgba(0, 0, 0, 0.75);
@@ -253,4 +254,5 @@ input {
 
 .login-fix {
   height: 550px;
+
 }
