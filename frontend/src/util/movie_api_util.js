@@ -10,7 +10,6 @@ export const getMovie = (id) => {
 
 
 export const APISearch = (value) => {
-  console.log(value);
   return axios.post(`/api/search/`, {body: value})
 };
 

@@ -16,7 +16,6 @@ class NavBar extends React.Component {
   }
 
   showResults(e) {
-    console.log(e.currentTarget.value);
     e.preventDefault();
     let val = e.currentTarget.value;
     if (e.keyCode === 13){

@@ -41,7 +41,6 @@ class SignupForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger;
     e.preventDefault();
     let user = {
       email: this.state.email,
@@ -124,11 +123,8 @@ class SignupForm extends React.Component {
 
     errors.forEach(error => {
       if (error.includes('Email')) {
-        // debugger;
         output = "input-box2 error-box"
       };
-      // debugger;
-      console.log("check email errors hit");
     })
     return output
   }
@@ -139,11 +135,8 @@ class SignupForm extends React.Component {
 
     errors.forEach(error => {
       if (error.includes('Password ')) {
-        // debugger;
         output = "input-box2 error-box"
       };
-      // debugger;
-      console.log("check pw errors hit");
     })
     return output
   }
@@ -154,17 +147,13 @@ class SignupForm extends React.Component {
 
     errors.forEach(error => {
       if (error.includes('match')) {
-        // debugger;
         output = "input-box2 error-box"
       };
-      // debugger;
-      console.log("check pw2 errors hit");
     })
     return output
   }
 
   render() {
-    // debugger;
     return (
       <div className="to-flex-row-center login-bg">
         <div className="login-form-container">
