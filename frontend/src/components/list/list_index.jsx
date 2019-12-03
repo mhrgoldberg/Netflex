@@ -44,7 +44,6 @@ class ListIndex extends React.Component {
               key={movie._id}
               movie={movie}
               deleteItem={() => {
-                // debugger;
                 return this.props.deleteItem(movie._id)}}
               onClick={this.handleMovieClick(movie._id)}
             />

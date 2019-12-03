@@ -14,7 +14,6 @@ const ListsReducer = (state = { items: {}, new: undefined }, action) => {
       newState.new = action.item.data
       return newState;
     case REMOVE_ITEM:
-      debugger;
       delete newState['items'][action.movieId];
       return newState;
     default:

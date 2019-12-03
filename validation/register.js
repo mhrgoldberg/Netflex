@@ -10,7 +10,6 @@ module.exports = function validateRegisterInput(data) {
 
 
   if (Validator.isEmpty(data.email)) {
-    // debugger
     errors.email = 'Email field is required';
   }
 

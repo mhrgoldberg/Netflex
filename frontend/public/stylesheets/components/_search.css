@@ -6,6 +6,8 @@
   margin: 10px 10px 10px 10px;
   background-color: transparent;
   padding: 20px;
+  background-image: linear-gradient(black, transparent 20%);
+
 }
 
 .search-index-item {

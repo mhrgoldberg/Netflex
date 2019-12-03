@@ -1,13 +1,13 @@
 .list-container {
   background-image: linear-gradient(black, transparent 20%);
-    padding: 5%;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
-    align-content: flex-start;
-    box-sizing: border-box;
+  padding: 5%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  align-content: flex-start;
+  box-sizing: border-box;
 }
 
 .list-index-item-hover-info {
