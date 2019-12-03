@@ -12,7 +12,7 @@ const ListsReducer = (state = { items: {}, new: undefined }, action) => {
       newState.new = action.item.data
       return newState;
     case REMOVE_ITEM:
-      delete newState['list'][action.itemId]
+      delete newState['items'][action.movieId];
       return newState;
     default:
       return state;

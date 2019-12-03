@@ -16,7 +16,6 @@ class NavBar extends React.Component {
   }
 
   showResults(val) {
-    // debugger;
     console.log(val);
     if (val === "" || val.length <= 0) {
       return null

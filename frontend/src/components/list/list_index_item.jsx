@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ListIndexItem = (props) => {
-
-  let { movie } = props;
+const ListIndexItem = props => {
+  let { onClick, deleteItem, movie } = props;
   let [isShown, setIsShown] = useState(false);
-
-
 
   return (
     <Link to={`/movies/${movie._id}`}>
@@ -24,10 +21,8 @@ const ListIndexItem = (props) => {
           style={{ maxWidth: "300px" }}
         />
         {isShown && (
-          <div className="movie-index-item-hover-info">
-            <p>
-              {movie.instructor}, {movie.year}
-            </p>
+          <div className="list-index-item-hover-info">
+            <i onClick={deleteItem} className="far fa-trash-alt"></i>
           </div>
         )}
       </div>
@@ -36,4 +31,3 @@ const ListIndexItem = (props) => {
 };
 
 export default ListIndexItem;
-

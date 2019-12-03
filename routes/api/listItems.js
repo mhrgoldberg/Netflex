@@ -28,8 +28,9 @@ router.post(
   }
 );
 
-router.get("/delete/:listItemId/", (req, res) => {
-  ListItem.findByIdAndRemove(req.params.id, (err, listItem) => {
+router.get("/delete/:movieId/", (req, res) => {
+  debugger
+  ListItem.deleteOne({ movie: req.params.movieId }, (err, listItem) => {
     if (err) {
       res.json(err);
     } else {

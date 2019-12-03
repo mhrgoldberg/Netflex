@@ -151,6 +151,7 @@ html, body {
   width: 250px;
   height: 150px;
   margin-right: 5px;
+  margin-bottom: 5px;
   font-size: 20px;
   cursor: pointer;
   transition: 500ms all;
@@ -234,7 +235,7 @@ html, body {
 
 .movie-show-main > div {
   padding-top: 0;
-  height: 100vh;
+  height: 100%;
 }
 
 .movie-show-player-wrapper {

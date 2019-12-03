@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import ListIndex from "./list_index"
+import ListIndex from "./list_index";
 import { deleteItem, fetchList } from "../../actions/list_actions";
 import { fetchMovie } from "../../actions/movie_actions";
 
@@ -13,9 +13,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    deleteItem: itemId => dispatch(deleteItem(itemId)),
-    fetchList: userId => dispatch(fetchList(userId)),
-  fetchMovie: movieId => dispatch(fetchMovie(movieId))
+    deleteItem: movieId => dispatch(deleteItem(movieId)),
+    fetchList: userId => dispatch(fetchList(userId))
   };
 };
 

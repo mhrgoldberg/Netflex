@@ -10,10 +10,13 @@ class MovieIndex extends React.Component {
       loading: true
     }
     this.handleMovieClick = this.handleMovieClick.bind(this);
+    this.inList = this.inList.bind(this); 
   }
 
   componentDidMount() {
-    this.props.fetchMovies().then(() => this.setState({ loading: true }));
+    this.props.fetchList(this.props.user.id)
+    .then(() => this.props.fetchMovies())
+    .then(() => this.setState({ loading: true }));
   }
 
   componentDidUpdate(prevProps) {
@@ -28,12 +31,21 @@ class MovieIndex extends React.Component {
     }
   }
 
+  inList(movieId) {
+    let present = false;
+    this.props.list.forEach( listItem => {
+      if (listItem._id === movieId) {
+        present = true;
+      };
+    });
+    return present;
+  }
+
   render() {
     if (this.state.movies.length === 0) {
       return null;
     }
-
-    let genres = {};
+    let genres = {};  
     if (this.state.movies.length > 0) {
       for (let i = 0; i < this.state.movies.length; i++) {
         if (!Object.keys(genres).includes(this.state.movies[i].genre)) {
@@ -113,7 +125,14 @@ class MovieIndex extends React.Component {
               <h1 className="movie-index-section-title">{genre}</h1>
               <div className="movie-index-section">
                 {genreMovies.map((movie, j) => {
-                  return <MovieIndexItem key={j} movie={movie} onClick={this.handleMovieClick(movie._id)} />
+                  return <MovieIndexItem 
+                    key={j} 
+                    movie={movie} 
+                    addListItem={this.props.addListItem}
+                    user={this.props.user}
+                    inList={this.inList(movie._id)} 
+                    onClick={this.handleMovieClick(movie._id)} 
+                  />
                 })}
                 <div className="movie-index-item-hidden-last"></div>
               </div>
@@ -129,7 +148,14 @@ class MovieIndex extends React.Component {
           <h1 className="movie-index-section-title">{genre}</h1>
           <div className="movie-index-section">
             {genreMovies.map((movie, j) => {
-              return <MovieIndexItem key={j} movie={movie} onClick={this.handleMovieClick(movie._id)}/>
+              return <MovieIndexItem 
+                key={j} 
+                movie={movie} 
+                addNewItem={this.props.addNewItem}
+                user={this.props.user}
+                inList={this.inList(movie._id)} 
+                onClick={this.handleMovieClick(movie._id)}
+              />
             })}
             <div className="movie-index-item-hidden-last"></div>
           </div>

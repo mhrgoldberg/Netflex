@@ -2,8 +2,19 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const MovieIndexItem = (props) => {
-  let {movie} = props;
+  let {movie, inList, addListItem, user } = props;
   let [isShown, setIsShown] = useState(false);
+  let addButton = null;
+  {if (!inList) {
+    addButton =  <i 
+    onClick={() => (props.addNewItem({
+      user: user.id,
+      movie: movie._id
+    }))} 
+    className="fas fa-plus-circle"
+    ></i>
+  }} 
+
   return (
     <Link to={`/movies/${movie._id}`}>
     <div className="movie-index-item"
@@ -19,9 +30,15 @@ const MovieIndexItem = (props) => {
         style={{ "maxWidth": "300px" }}
       />
       {isShown && (
-        <div className="movie-index-item-hover-info"> 
-          <p>{movie.instructor}, {movie.year}</p>
+        <div>
+          <div className="movie-index-item-hover-info"> 
+            <p>{movie.instructor}, {movie.year}</p>
+          </div>
+          <div className="list-index-item-hover-info">
+           {addButton}
         </div>
+        </div>
+       
       )}
     </div>
     </Link>
