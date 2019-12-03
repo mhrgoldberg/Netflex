@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+
 
 const ListIndexItem = props => {
   let { onClick, deleteItem, movie } = props;
   let [isShown, setIsShown] = useState(false);
 
   return (
-    <Link to={`/movies/${movie._id}`}>
+    <div onClick={() => props.history.push(`/movies/${movie._id}`)} >
       <div
         className="movie-index-item"
         onMouseEnter={() => setIsShown(true)}
@@ -22,12 +23,16 @@ const ListIndexItem = props => {
         />
         {isShown && (
           <div className="list-index-item-hover-info">
-            <i onClick={deleteItem} className="far fa-trash-alt"></i>
+            <i onClick={(e) => {
+              e.stopPropagation();
+              return deleteItem(movie._id);
+            }}
+              className="far fa-trash-alt"></i>
           </div>
         )}
       </div>
-    </Link>
+    </div>
   );
 };
 
-export default ListIndexItem;
+export default withRouter(ListIndexItem);
