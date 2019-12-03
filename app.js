@@ -8,6 +8,7 @@ const passport = require('passport');
 const users = require("./routes/api/users");
 const movies = require("./routes/api/movies");
 const search = require('./routes/api/search');
+const listItems = require("./routes/api/listItems");
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -25,6 +26,7 @@ app.use(bodyParser.json());
 app.use("/api/search", search);
 app.use("/api/users", users);
 app.use("/api/movies", movies);
+app.use("/api/lists", listItems);
 
 
 const port = process.env.PORT || 5000;
