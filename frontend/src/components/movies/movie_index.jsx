@@ -56,7 +56,7 @@ class MovieIndex extends React.Component {
     }
 
     let allSections = Object.keys(genres).sort().map((genre, i) => {
-      let genreMovies = genres[genre];
+      let genreMovies = genres[genre].reverse();
 
       
       let newSection;
