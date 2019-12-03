@@ -10,6 +10,7 @@ class MovieSearch extends React.Component {
   }
 
   handleMovieClick(movieId) {
+    // debugger;
     return e => {
       this.props.history.push(`/movies/${movieId}`);
     };

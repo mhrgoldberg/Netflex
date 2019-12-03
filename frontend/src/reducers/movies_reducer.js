@@ -13,7 +13,7 @@ const MoviesReducer = (state = {allMovies: [], selectedMovie: {}}, action) => {
     case RECEIVE_LIST:
         return Object.assign(newState, {allMovies: action.list.data});
     case REMOVE_ITEM:
-      debugger
+      // debugger
         delete newState['allMovies'][action.movieId];
         return newState;
     default:

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const SearchIndexItem = stuff => {
   let { movie } = stuff;
   let [isShown, setIsShown] = useState(false);
+  // debugger;
   return (
     <Link to={`/movies/${movie._id}`}>
       <div className="search-index-item" onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)} >

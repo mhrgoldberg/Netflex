@@ -29,7 +29,7 @@ router.post(
 );
 
 router.get("/delete/:movieId/", (req, res) => {
-  debugger
+  // debugger
   ListItem.deleteOne({ movie: req.params.movieId }, (err, listItem) => {
     if (err) {
       res.json(err);
