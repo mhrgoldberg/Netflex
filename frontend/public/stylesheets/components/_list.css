@@ -23,6 +23,7 @@
 
 .list-index-item-hover-info i {
   color: white;
+  text-shadow:1px 1px 10px rgb(0, 0, 0), 1px 1px 10px rgb(0, 0, 0);
 }
 
 .list-index-item-hover-info i:hover {
