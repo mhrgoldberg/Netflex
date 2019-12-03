@@ -16,7 +16,7 @@ class ListIndex extends React.Component {
   componentDidMount() {
     this.props
       .fetchList(this.props.user.id)
-      .then(() => this.setState({ loading: true }));
+      .then(() => this.setState({ loading: false }));
   }
 
   componentDidUpdate(prevProps) {
@@ -32,7 +32,7 @@ class ListIndex extends React.Component {
   }
 
   render() {
-    if (this.props.movies.allMovies.length === 0) {
+    if (this.state.loading) {
       return null;
     }
     return (
