@@ -44,7 +44,9 @@ class NavBar extends React.Component {
               </div>
             </form>
             <div className="dropdown">
-              <div className="nav-bar-logo"></div>
+              <div className="nav-bar-logo-container">
+                <div className="nav-bar-logo"></div>
+              </div>
               <i className="fas fa-angle-down"></i>
               <div className="up-arrow"></div>
               <ul className="dropdown-content">
