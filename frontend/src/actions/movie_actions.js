@@ -25,3 +25,11 @@ export const fetchMovie = movieId => dispatch => (
     .then(movie => dispatch(receiveMovie(movie)))
     .catch(err => console.log(err))
 );
+
+
+export const search = value => dispatch => (
+  APISearch(value)
+    .then(movies => dispatch(receiveMovies(movies)))
+    .catch(err => console.log(err))
+
+)
