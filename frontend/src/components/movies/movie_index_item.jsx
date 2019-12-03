@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 
 const MovieIndexItem = props => {
-  let { movie, inList, addListItem, user } = props;
+  let { movie, inList, addNewItem, user } = props;
   let [isShown, setIsShown] = useState(false);
   let [inListState, setInListState] = useState(inList);
 
@@ -14,7 +14,7 @@ const MovieIndexItem = props => {
           onClick={(e) => {
             e.stopPropagation();
             setInListState(true);
-            return props.addNewItem({
+            return addNewItem({
               user: user.id,
               movie: movie._id
             })
