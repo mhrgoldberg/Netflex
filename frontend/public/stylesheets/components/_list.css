@@ -1,13 +1,13 @@
 .list-container {
   background-image: linear-gradient(black, transparent 20%);
-    padding: 5%;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
-    align-content: flex-start;
-    box-sizing: border-box;
+  padding: 5%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  align-content: flex-start;
+  box-sizing: border-box;
 }
 
 .list-index-item-hover-info {
@@ -23,6 +23,7 @@
 
 .list-index-item-hover-info i {
   color: white;
+  text-shadow:1px 1px 10px rgb(0, 0, 0), 1px 1px 10px rgb(0, 0, 0);
 }
 
 .list-index-item-hover-info i:hover {

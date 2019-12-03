@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 
-
 const ListIndexItem = props => {
   let { onClick, deleteItem, movie } = props;
   let [isShown, setIsShown] = useState(false);
@@ -23,7 +22,13 @@ const ListIndexItem = props => {
         />
         {isShown && (
           <div className="search-index-item-hover-info trash-icon-box">
-            <i onClick={e => { e.stopPropagation(); return deleteItem(movie._id); }}className="far fa-trash-alt"></i>
+            <i
+              onClick={e => {
+                e.stopPropagation();
+                return deleteItem(movie._id);
+              }}
+              className="far fa-trash-alt"
+            ></i>
           </div>
         )}
       </div>

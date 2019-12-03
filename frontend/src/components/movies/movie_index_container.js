@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
   return {
     movies: state.movies.allMovies,
     user: state.session.user,
-    list: Object.values(state.lists.items),
+    list: Object.values(state.lists.items)
   };
 };
 
