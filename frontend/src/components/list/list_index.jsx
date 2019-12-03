@@ -36,16 +36,17 @@ class ListIndex extends React.Component {
       return null;
     }
     return (
-      <div className="list-container">
+      <div className="search-show">
         {this.props.list.map((movie, i) => {
           return (
             <ListIndexItem
-              className="list-index-item"
+              className="search-index-item"
               key={movie._id}
               movie={movie}
               deleteItem={() => {
                 // debugger;
-                return this.props.deleteItem(movie._id)}}
+                return this.props.deleteItem(movie._id);
+              }}
               onClick={this.handleMovieClick(movie._id)}
             />
           );
