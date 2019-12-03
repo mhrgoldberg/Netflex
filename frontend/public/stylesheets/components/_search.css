@@ -1,11 +1,12 @@
 .search-show {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   height: 100%;
   margin: 10px 10px 10px 10px;
   background-color: transparent;
   padding: 20px;
+  align-content: flex-start;
 }
 
 .search-index-item {
@@ -70,3 +71,12 @@
   text-shadow:1px 1px 5px rgb(0, 0, 0), 1px 1px 5px rgb(0, 0, 0);
   z-index: 10;
 } 
+
+.trash-icon-box i{
+  padding-top: 30px;
+  padding-left: 190px;
+  color: white;
+}
+.search-index-item-hover-info i:hover {
+  color: violet;
+}
