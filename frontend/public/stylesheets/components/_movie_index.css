@@ -28,7 +28,7 @@ html, body {
   min-width: 100vw;
   height: 530px;
   overflow: hidden;
-  margin-bottom: 70px;
+  margin-bottom: 10px;
 }
 
 .movie-index-main-video-wrapper > video {
@@ -85,7 +85,7 @@ html, body {
 }
 
 .movie-index-main-video-wrapper.section {
-  margin-top: 60px;
+  margin-top: 0px;
 }
 
 .movie-index-video-inner-description > a > i {
@@ -112,7 +112,7 @@ html, body {
 .movie-index-section-main {
   position: relative;
   height: 280px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 
@@ -123,7 +123,7 @@ html, body {
   font-size: 20px;
   padding-top: 20px;
   margin-left: 40px;
-  padding-bottom: 5px;
+  padding-bottom: 0px;
   width: 99%;
 }
 
@@ -139,7 +139,7 @@ html, body {
   flex-direction: row;
   flex-wrap: nowrap;
   box-sizing: border-box;
-  padding: 30px 30px;
+  padding: 10px 30px;
   height: 250px;
   overflow-x: scroll;
   align-items: center;
