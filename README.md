@@ -67,8 +67,40 @@ router.post('/', function(req, res, next) {
 
 module.exports = router;
 ```
+The my list feature allows a user to add any movie from the index or search page to their list to watch at a later time. With the little plus button in the bottom corner of each movie tile as seen below the user can add the movie to their list:
 
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/x2wPcym/AE8-FF105-AD45-412-C-A90-B-19-B283-CD67-BA.png" alt="AE8-FF105-AD45-412-C-A90-B-19-B283-CD67-BA" border="0"></a>
 
+The plus icon only shows up on movies which are not already on the list. This worked well enough but the icon did not disappear when clicked. This was solved by setting the local state of the movie tile using react hooks to a boolean signifiying if the movie is in the list or not. See below for a code snippet showing the conditional logic for displaying or hiding the button. This code is located in the React functional component responsible for displaying each movie tile: 
+
+```javascript
+  let { movie, inList, addNewItem, user } = props;
+  // inList is a boolean passed down as props to the component
+  let [inListState, setInListState] = useState(inList);
+  // addButton is set to a default of null
+  let addButton = null;
+  {
+    // if the movie is not already in the list addbutton will display the icon
+    if (!inListState) {
+      addButton = (
+        <i
+          onClick={(e) => {
+            // stop the event propagation so that the when clicked the movie is
+            // added to the list but the movie show page is not also opened
+            e.stopPropagation();
+            setInListState(true); 
+            // add item to list
+            return addNewItem({
+              user: user.id,
+              movie: movie._id
+            })
+          }}
+          className="fas fa-plus-circle"
+        ></i>
+      );
+    }
+  }
+```
 ## Technologies and Technical Challenges
 
 * Node JS
