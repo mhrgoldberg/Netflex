@@ -29,6 +29,26 @@ To keep our users interested, dynamic movie segments have been built into our pa
 
 ### Responsive Search
 
+
+```javascript
+  showResults(e) {
+    e.preventDefault();
+    let val = e.currentTarget.value;
+    if (e.keyCode === 13){
+      e.currentTarget.value = ""
+      this.props.search(val).then(() => this.props.history.push("/search"));
+    } else if ((val === "" || val.length <= 0) ) {
+      return <div className="loading-background">
+      <i className="fas fa-spinner"></i>
+      <p>Loading...</p>
+    </div>;
+    } else {
+      this.props.search(val).then(() => (this.props.history.push("/search")));
+
+    }
+  }
+  ```
+
 ```javascript
 const express = require('express');
 const router = express.Router();
