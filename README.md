@@ -18,11 +18,11 @@ To keep our users interested, dynamic movie segments have been built into our pa
 
 ## Functionality and MVP
 
-1. User authorization - sign up and log in
-2. Display Videos - dynamic movie viewer and video storage
-3. Genres - displays categories on the main page
-4. Search - search by name or genre
-5. MyList (CRUD) - ability to save your favorite movies onto a list for later reference
+1. User authorization - New users can sign up, and existing users can log in
+2. Display Videos - Dynamic movie viewer and video storage; using both AWS and embedded videos
+3. Genres - Displays categories on the main page by database categorization
+4. Search - Search by movie name; agnostic of capitalization or special characters
+5. MyList - Ability to save your favorite movies to a list for later reference (you can also delete them from the list!)
 6. Deployment to Heroku
 
 ## Tricky Issues and Solutions
