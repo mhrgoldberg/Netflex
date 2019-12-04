@@ -29,6 +29,8 @@ To keep our users interested, dynamic movie segments have been built into our pa
 
 ### Responsive Search
 
+<img src="https://i.ibb.co/Ydc0ZBS/searchbar.png" alt="searchbar" border="0">
+
 One of our goals was to create a Search function that is responsive and flexible-- one that would display results as users type and be a bit lenient of the user input. We utilized an onkeyup event to initiate search function; both the key pressed and the current input of the search bar affects the behavior of the method. Chaining a .then() allows us to push the results of the search into a show component via the route "/search". By pressing "return" or "enter", the user can clear the bar for the next search.
 
 ```javascript
