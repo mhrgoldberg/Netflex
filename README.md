@@ -28,10 +28,9 @@ To keep our users interested, dynamic movie segments have been built into our pa
 
 * Node JS
 * Express
-* Angular JS
 * MongoDB
 * HTML
-* SCSS/CSS
+* CSS
 
 ## Libraries
 
