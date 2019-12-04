@@ -67,6 +67,8 @@ router.post('/', function(req, res, next) {
 
 module.exports = router;
 ```
+
+### Integrating Custom Lists 
 The my list feature allows a user to add any movie from the index or search page to their list to watch at a later time. With the little plus button in the bottom corner of each movie tile as seen below the user can add the movie to their list:
 
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/x2wPcym/AE8-FF105-AD45-412-C-A90-B-19-B283-CD67-BA.png" alt="AE8-FF105-AD45-412-C-A90-B-19-B283-CD67-BA" border="0"></a>
@@ -101,6 +103,24 @@ The plus icon only shows up on movies which are not already on the list. This wo
     }
   }
 ```
+
+### Left-and-Right Scroll 
+Each genre's movie previews are side-scrollable, but we concluded it was necessary to add buttons to shift the scroll position for users who are not able to scroll sideways easily on their devices. 
+To achieve this, we added an event listener to all the left and right buttons which would invoke either the `scrollLeft` or `scrollRight` function on click. The scrolling functions are as follows:
+
+```javascript 
+  scrollLeft(elementId) {
+    findDOMNode(this.refs[elementId]).scrollLeft -= 600;
+  }
+
+  scrollRight(elementId) {
+    findDOMNode(this.refs[elementId]).scrollLeft += 600;
+  }
+```
+
+Here, we used the `findDOMNode` function from the `react-dom` library. Each genre list element was given a ref as their section number (or `elementId` above). The two functions above were responsible for finding the specific genre list and incrementing or decrementing its scroll position. 
+
+
 ## Technologies and Technical Challenges
 
 * Node JS
