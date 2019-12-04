@@ -105,8 +105,8 @@ The plus icon only shows up on movies which are not already on the list. This wo
 ```
 
 ### Left-and-Right Scroll 
-Each genre's movie previews are side-scrollable, but we concluded it was necessary to add buttons to shift the scroll position for users who are not able to scroll sideways easily on their devices. 
-To achieve this, we added an event listener to all the left and right buttons which would invoke either the `scrollLeft` or `scrollRight` function on click. The scrolling functions are as follows:
+Each genre's movie previews were made to be side-scrollable lists, but we concluded that it was necessary to add buttons to shift the scroll position for users who are not able to scroll sideways as easily on their devices. 
+To achieve this, we added an event listener to all the left and right buttons of each genre list which would invoke either the `scrollLeft` or `scrollRight` function. These functions are as follows:
 
 ```javascript 
   scrollLeft(elementId) {
@@ -118,7 +118,7 @@ To achieve this, we added an event listener to all the left and right buttons wh
   }
 ```
 
-Here, we used the `findDOMNode` function from the `react-dom` library. Each genre list element was given a ref as their section number (or `elementId` above). The two functions above were responsible for finding the specific genre list and incrementing or decrementing its scroll position. 
+Here, we used the `findDOMNode` function from the `react-dom` library. Each genre list element was given a ref as their section number (or `elementId` above). These two functions are responsible for finding the specific genre list and incrementing or decrementing its scroll position. 
 
 
 ## Technologies and Technical Challenges
