@@ -46,7 +46,12 @@ class MovieSearch extends React.Component {
       );
     });
 
-    return <div className="search-show">{movies}</div>;
+    return <div className="search-show">
+        <div className="search-list-header">
+          <h1>Search</h1>
+        </div>
+      {movies}
+    </div>;
   }
 };
 

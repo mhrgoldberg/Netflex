@@ -32,3 +32,17 @@
   height: 100%;
   width: 100%;
 }
+
+.search-list-header {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  color: white;
+  font-family: 'Arizonia', cursive;
+  align-content: center;
+  justify-content: center;
+}
+
+.search-list-header h1 {
+  color: white;
+}
