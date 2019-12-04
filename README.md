@@ -1,4 +1,4 @@
-# Netflex
+<img src="https://i.ibb.co/BZWtCfQ/logo.png" alt="logo" border="0">
 
 [Crop, Top, and Roll (Click Me!)](https://netflex80s.herokuapp.com/#/login)
 
@@ -6,8 +6,8 @@
 
 This time warp is totally tubular!! Get fit with your favorite 80s workout crazes— or relive iconic moments, like the Miracle on Ice! Netflex is your go-to, neon-sheathed, Gen-X, fever-dream; sign up now!
 
+<img src="https://i.ibb.co/qjMh2Yy/login.png" alt="login" border="0">
 
-*picture of login*
 
 Site-wide thematic styling provides the comfort of a traditional Netflix clone, and the high-octane energy of America's most nostalgic decade. Throughout, one will find our elements are similar, but different-- starting with the background montage on the login page, all the way through button indicators, so a user can save a video!
 
