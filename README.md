@@ -25,6 +25,27 @@ To keep our users interested, dynamic movie segments have been built into our pa
 5. MyList (CRUD) - ability to save your favorite movies onto a list for later reference
 6. Deployment to Heroku
 
+## Tricky Issues and Solutions
+
+### Responsive Search
+
+```javascript
+const express = require('express');
+const router = express.Router();
+const movies = require('../../models/Movie');
+
+router.post('/', function(req, res, next) {
+  let q = req.body.body;
+
+  movies.find({title : {$regex: q, $options: 'i'}}, function (err, data) {res.json(data)}).sort({ date: -1 })
+    .then(movies)
+  ;
+  
+});
+
+module.exports = router;
+```
+
 
 ## Technologies and Technical Challenges
 
