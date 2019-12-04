@@ -29,6 +29,7 @@ To keep our users interested, dynamic movie segments have been built into our pa
 
 ### Responsive Search
 
+One of our goals was to create a Search function that is responsive and flexible-- one that would display results as users type and be a bit lenient of the user input. We utilized an onkeyup event to initiate search function; both the key pressed and the current input of the search bar affects the behavior of the method. Chaining a .then() allows us to push the results of the search into a show component via the route "/search". By pressing "return" or "enter", the user can clear the bar for the next search.
 
 ```javascript
   showResults(e) {
@@ -44,10 +45,11 @@ To keep our users interested, dynamic movie segments have been built into our pa
     </div>;
     } else {
       this.props.search(val).then(() => (this.props.history.push("/search")));
-
     }
   }
   ```
+  
+Below is the query used to retrieve information from our database. We added an index on the 'title' header of our database via the MongoDB Shell so users can query that information directly, with full or partial guesses. Utilizing regex in the query also makes the function unperturbed by capialization or special characters.
 
 ```javascript
 const express = require('express');
@@ -56,11 +58,9 @@ const movies = require('../../models/Movie');
 
 router.post('/', function(req, res, next) {
   let q = req.body.body;
-
   movies.find({title : {$regex: q, $options: 'i'}}, function (err, data) {res.json(data)}).sort({ date: -1 })
     .then(movies)
   ;
-  
 });
 
 module.exports = router;
