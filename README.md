@@ -40,25 +40,25 @@ We will need to:
 ## Group Members and Work Breakdown
 Mitchell Reiss, Alex Lee, Jacob Schneider
 ### Day 1
-* Create Database, setup file tree, user auth - Mitchell
+* Create Database, setup file tree, backend user auth - Mitchell
 * Build frontend components for Login, signup, logout - Jacob
 * AWS Setup - Alex
 
 ### Day 2
-* Setup basic routes and schema for videos - Jacob
-* Style user auth and splash page - Mitchell
-* AWS integration - Alex
+* Style navbar - Mitchell
+* Style user auth and splash page - Jacob
+* Add movie index and show page - Alex
 
 ### Day 3
- * Movie viewer 
- * Movie index
- * Seed movies
+ * Create My List feature backend - Mitchell
+ * Style movie index and show page - Alex
+ * Seed movies - Alex, Jacob, Mitchell
  
 ### Day 4
- * Setup basic routes and schema for videos
- * List page
- * Search by movie, genre or year
+ * Add styling and display movies to index page - Alex
+ * Style My List feature - Mitchell
+ * Search by movie - Jacob
  
 ### Day 5
-* Finish styling
-* Deployment to Heroku
+* Finish styling - Alex, Mitchell, Jacob
+* Deployment to Heroku - Jacob
