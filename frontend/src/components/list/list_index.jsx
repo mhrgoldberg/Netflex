@@ -40,6 +40,9 @@ class ListIndex extends React.Component {
     }
     return (
       <div className="search-show">
+        <div className="search-list-header">
+          <h1>My List</h1>
+        </div>
         {this.props.list.map((movie, i) => {
           return (
             <ListIndexItem
