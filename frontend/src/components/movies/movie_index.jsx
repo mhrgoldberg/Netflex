@@ -100,7 +100,7 @@ class MovieIndex extends React.Component {
                   type="video/mp4"
                 ></video> */}
                 <video autoPlay loop>
-                  <source src="https://drive.google.com/uc?export=download&id=149Hszi542npEcBXqSiRaxaV1Cuv1s5eC" type='video/mp4' />
+                  <source src={"https://www.dl.dropboxusercontent.com/s/52q3cb95o1k704l/section1.mp4?dl=0"} type='video/mp4' />
                 </video>
               </div>
               <div className="index-video-cutoff-bottom"></div>
@@ -134,7 +134,8 @@ class MovieIndex extends React.Component {
                   type="video/mp4"
                 ></video> */}
                 <video autoPlay loop>
-                  <source src="https://drive.google.com/uc?export=download&id=1-_lSBbwkir0aTxBwurP0TuAytw6H7lQK" type='video/mp4' />
+                  {/* <source src="https://drive.google.com/uc?export=download&id=1-_lSBbwkir0aTxBwurP0TuAytw6H7lQK" type='video/mp4' /> */}
+                  <source src="https://www.dl.dropboxusercontent.com/s/080m1ywn6kmffrh/section2.mp4?dl=0" type='video/mp4' />
                 </video>
               </div>
               {/* <iframe src="https://drive.google.com/file/d/1-_lSBbwkir0aTxBwurP0TuAytw6H7lQK/preview" width="640" height="480"></iframe> */}
@@ -240,7 +241,8 @@ class MovieIndex extends React.Component {
         
         <div className="movie-index-main-video-wrapper">
           <video autoPlay loop>
-            <source src="https://drive.google.com/uc?export=download&id=1xYextsivdanTCT3_vKyo9SuXbHpQQZrQ" type='video/mp4' />
+            {/* <source src="https://drive.google.com/uc?export=download&id=1xYextsivdanTCT3_vKyo9SuXbHpQQZrQ" type='video/mp4' /> */}
+            <source src="https://www.dl.dropboxusercontent.com/s/vg73t481d5hqnrs/neflexMainMovie.mp4?dl=0" type='video/mp4' />
           </video>
         </div>
         <div className="index-video-cutoff-bottom"></div>
