@@ -38,6 +38,7 @@ const MovieIndexItem = props => {
         <img
           className="movie-index-item-image"
           src={process.env.PUBLIC_URL + `/images/previews/${movie.imageUrl}`}
+          // src={"https://drive.google.com/uc?export=download&id=" + movie.imageUrl}
           style={{ maxWidth: "300px" }}
         />
         {isShown && (
