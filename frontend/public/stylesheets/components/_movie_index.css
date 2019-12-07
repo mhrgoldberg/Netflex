@@ -20,6 +20,7 @@ html, body {
 .movie-index-main {
   color: white;
   overflow-x: hidden;
+  height: 100%;
 }
 
 
