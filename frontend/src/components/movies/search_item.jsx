@@ -4,16 +4,21 @@ import { withRouter } from "react-router-dom";
 const SearchIndexItem = props => {
   let { movie, inList, addNewItem, user } = props;
   let [isShown, setIsShown] = useState(false);
+  // inList is a boolean passed down as props to the component
   let [inListState, setInListState] = useState(inList);
-
+  // addButton is set to a default of null
   let addButton = null;
   {
+    // if the movie is not already in the list addbutton will display the icon
     if (!inListState) {
       addButton = (
         <i
           onClick={(e) => {
+            // stop the event propagation so that the when clicked the movie is
+            // added to the list but the movie show page is not also opened
             e.stopPropagation();
-            setInListState(true);   
+            setInListState(true); 
+            // add item to list
             return addNewItem({
               user: user.id,
               movie: movie._id

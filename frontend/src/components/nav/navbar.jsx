@@ -26,7 +26,6 @@ class NavBar extends React.Component {
     } else if ((val === "" || val.length <= 0) ) {
       return <div className="loading-background">
       <i className="fas fa-spinner"></i>
-      <p>Loading...</p>
     </div>;
     } else {
       this.props.search(val).then(() => (this.props.history.push("/search")));

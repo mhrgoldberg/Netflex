@@ -27,7 +27,6 @@ class MovieShow extends React.Component {
     if (this.state.loading ) {
       return <div className="loading-background">
       <i className="fas fa-spinner"></i>
-      <p>Loading...</p>
     </div>;
     } else {
       return (
