@@ -158,6 +158,7 @@ class SignupForm extends React.Component {
       <div className="to-flex-row-center login-bg">
         <div className="login-form-container">
           <h1 className="logo-signin">Sign Up</h1>
+          <div className="linebreak pad-bot"></div>
           <form onSubmit={this.handleSubmit}>
             <div className="login-form-form">
               <div className={this.checkEmailErrors()}>

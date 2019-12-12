@@ -135,7 +135,7 @@ class LoginForm extends React.Component {
       <div className="to-flex-row-center login-bg">
         <div className="login-form-container login-fix">
           <h1 className="logo-signin">Log In</h1>
-          <h2>Log in to start watching or restart your membership</h2>
+          <div className="linebreak pad-bot"></div>
           <form onSubmit={this.handleSubmit}>
             <div className="login-form-form">
               <div className={this.checkErrors()}>
@@ -189,7 +189,9 @@ class LoginForm extends React.Component {
               <div className="linebreak"></div>
               <Link to={`/signup`}>
               <div className="demo-input">
-                <div>Sign Up ></div>
+                <div className="to-flex-button">
+                    <div>Sign Up</div><div><i className="fas fa-caret-square-right"></i></div>
+                  </div>
               </div>
               </Link>
             </div>

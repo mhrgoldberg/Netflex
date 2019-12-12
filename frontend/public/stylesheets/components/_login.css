@@ -136,6 +136,7 @@ p {
   overflow: visible;
   padding-left: 20px;
   margin-top: 16px;
+  color: rgba(213, 212, 212, 0.904);
 
 }
 
@@ -145,6 +146,7 @@ p {
   overflow: visible;
   padding-left: 20px;
   margin-top: 5px;
+  color: rgba(155, 151, 151, 0.728);
 }
 
 input {
@@ -255,4 +257,12 @@ input {
 .login-fix {
   height: 550px;
 
+}
+
+.pad-bot {
+  margin-bottom: 20px;
+}
+.to-flex-button {
+  display: flex;
+  justify-content: space-evenly;
 }

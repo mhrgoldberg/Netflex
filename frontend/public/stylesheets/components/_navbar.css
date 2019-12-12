@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Arizonia&display=swap');
+
 .nav-bar {
   display: flex;
   flex-direction: row;
@@ -43,6 +45,11 @@
   align-items: center;
   position: relative;
   bottom: 1px;
+
+}
+.r-side-nav-bar-links a {
+  font-family: 'Arizonia', cursive;
+  font-size: 24px;
 }
 
 .nav-bar-content a {
