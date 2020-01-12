@@ -226,7 +226,7 @@ input {
   font-size: 50px;
   font-weight: 400;
   -webkit-text-stroke: 1px violet;
-  text-shadow: 2px 2px 5px violet;
+  text-shadow: 5px 5px 8px violet;
   /* animation: logoflicker .1s linear infinite alternate; */
 }
 
