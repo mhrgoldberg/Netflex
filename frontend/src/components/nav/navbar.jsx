@@ -67,6 +67,7 @@ class NavBar extends React.Component {
       return (
         <div className="r-side-nav-bar-links">
           <Link to={"/signup"}>Signup</Link>
+          <div className="colon">:</div>
           <Link to={"/login"}>Login</Link>
         </div>
       );
@@ -78,7 +79,7 @@ class NavBar extends React.Component {
       <div className="nav-bar">
         <div className="nav-bar-content">
           <Link to="/login">
-            <h1 className="logo-signin">Netflex</h1>
+            <h1 className="logo-signin nav-img">Netflex</h1>
           </Link>
           {this.getLinks()}
         </div>

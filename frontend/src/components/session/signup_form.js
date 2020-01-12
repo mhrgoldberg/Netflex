@@ -203,7 +203,7 @@ class SignupForm extends React.Component {
               </div>
               <div className="linebreak"></div>
               <button className="demo-input">
-                <div>Sign Up ></div>
+                <div className="sign-btn">Sign Up </div>
               </button>
               {/* {this.renderErrors()} */}
             </div>

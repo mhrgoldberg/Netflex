@@ -33,11 +33,26 @@ p {
   margin-left: 10%;
   width: 80%;
 
-    border: 1px solid rgb(230, 209, 52);
+  border: 1px solid rgb(230, 209, 52);
   outline-style: double;
   outline-color: rgb(230, 209, 52);
   box-shadow: 2px 2px 5px rgb(230, 209, 52);
+  /* animation: breakglow .1s ease-in infinite alternate; */
 }
+
+@keyframes breakglow {
+  from {
+    border: 1px solid rgb(230, 209, 52);
+    outline-color: rgb(230, 209, 52);
+    box-shadow: 2px 2px 5px rgb(230, 209, 52)
+  }
+  to {
+    border: 1px solid rgb(167, 163, 138);
+    outline-color: rgb(167, 163, 138);
+    box-shadow: 2px 2px 5px rgb(167, 163, 138)
+  }
+}
+
 
 
 
@@ -88,10 +103,23 @@ p {
   cursor: text;
   align-items: stretch;
   border-radius: 4px;
-  border: 1px solid cyan;
+  border: 1px solid rgba(0, 255, 255, 0.623);
   outline-style: double;
+  outline-color: rgba(0, 255, 255, 0.623);
+  box-shadow: 1px 1px 3px rgba(0, 255, 255, 0.623);
+}
+
+.input-box2:focus-within {
   outline-color: cyan;
   box-shadow: 2px 2px 5px cyan;
+  border: 1px solid cyan;
+}
+
+.input-box2:hover {
+  outline-color: cyan;
+  box-shadow: 2px 2px 5px cyan;
+  border: 1px solid cyan;
+
 }
 
 .error-box {
@@ -104,8 +132,8 @@ p {
 .demo-input {
   align-items: center;
   background-color: transparent;
-  border: 1px solid violet;
-  box-shadow: 2px 2px 5px violet;
+  border: 1px solid rgba(221, 150, 221, 0.714);
+  box-shadow: 1px 1px 3px rgba(221, 150, 221, 0.714);
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
@@ -115,7 +143,7 @@ p {
   justify-content: center;
   margin-top: 16px;
   outline-style: double;
-  outline-color: violet;
+  outline-color: rgba(221, 150, 221, 0.714);
   width: 100%;
   margin-bottom: 20px;
 
@@ -123,6 +151,9 @@ p {
 
 .demo-input:hover {
   cursor: pointer;
+  border: 1px solid violet;
+  box-shadow: 2px 2px 5px violet;
+  outline-color: violet;
 }
 
 
@@ -195,7 +226,27 @@ input {
   font-size: 50px;
   font-weight: 400;
   -webkit-text-stroke: 1px violet;
+  text-shadow: 5px 5px 8px violet;
+  /* animation: logoflicker .1s linear infinite alternate; */
+}
+
+.flicker {
+  font-size: 50px;
+  font-weight: 400;
+  -webkit-text-stroke: 1px violet;
   text-shadow: 2px 2px 5px violet;
+  animation: logoflicker .1s linear infinite alternate;
+}
+
+@keyframes logoflicker {
+  from {
+    -webkit-text-stroke: 1px violet;
+  text-shadow: 5px 5px 8px violet;
+  }
+  to {
+    -webkit-text-stroke: 1px rgb(211, 120, 211);
+  text-shadow: 5px 5px 7px violet;
+  }
 }
 
 .floating-label-field {
@@ -265,4 +316,8 @@ input {
 .to-flex-button {
   display: flex;
   justify-content: space-evenly;
+}
+
+.nav-img {
+  margin-bottom: 15px;
 }

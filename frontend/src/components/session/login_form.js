@@ -190,7 +190,7 @@ class LoginForm extends React.Component {
               <Link to={`/signup`}>
               <div className="demo-input">
                 <div className="to-flex-button">
-                    <div>Sign Up</div><div><i className="fas fa-caret-square-right"></i></div>
+                    <div>Sign Up</div>
                   </div>
               </div>
               </Link>
