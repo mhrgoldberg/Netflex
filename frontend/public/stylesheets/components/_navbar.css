@@ -50,6 +50,14 @@
 .r-side-nav-bar-links a {
   font-family: 'Arizonia', cursive;
   font-size: 24px;
+  margin-left: 6px;
+  margin-right: 4px;
+}
+
+.r-side-nav-bar-links a:hover {
+  font-size: 26px;
+  margin-left: 4px;
+  margin-right: 2px;
 }
 
 .nav-bar-content a {
@@ -218,4 +226,14 @@ input::-webkit-input-placeholder {
   top: 34px;
   margin-left: 12px;
   margin-right: 5px;
+}
+
+.colon {
+  color: rgb(230, 209, 52);
+  font-size: 36px;
+  padding: 0;
+  /* -webkit-text-stroke: 2px rgb(230, 209, 52); */
+  text-shadow: 3px 3px 5px rgb(232, 229, 208);
+  margin-bottom: 8px;
+  cursor: default;
 }
