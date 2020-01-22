@@ -16,6 +16,23 @@ Users who sign up for our service can browse and watch a variety of videos from 
 To keep our users interested, dynamic movie segments have been built into our pages with AWS. Longer, selectable, videos have been embedded to save on overall project costs. Start watching with one click!
 
 
+## Technologies and Technical Challenges
+
+* Node JS
+* Express
+* MongoDB
+* HTML
+* CSS
+
+## Libraries
+
+* React JS
+* Redux
+* Mongoose
+* BCrypt, JSONWebToken, Passport for user authentication
+* Validator
+* Bodyparser middleware
+
 ## Functionality and MVP
 
 1. User authorization - New users can sign up, and existing users can log in
@@ -120,46 +137,3 @@ To achieve this, we added an event listener to all the left and right buttons of
 Here, we used the `findDOMNode` function from the `react-dom` library. Each genre list element was given a ref as their section number (or `elementId` above). These two functions are responsible for finding the specific genre list and incrementing or decrementing its scroll position. 
 
 
-## Technologies and Technical Challenges
-
-* Node JS
-* Express
-* MongoDB
-* HTML
-* CSS
-
-## Libraries
-
-* React JS
-* Redux
-* Mongoose
-* BCrypt, JSONWebToken, Passport for user authentication
-* Validator
-* Bodyparser middleware
-
-
-## Group Members and Work Breakdown
-Mitchell Reiss, Alex Lee, Jacob Schneider
-### Day 1
-* Create Database, setup file tree, backend user auth - Mitchell
-* Build frontend components for Login, signup, logout - Jacob
-* AWS Setup - Alex
-
-### Day 2
-* Style navbar - Mitchell
-* Style user auth and splash page - Jacob
-* Add movie index and show page - Alex
-
-### Day 3
- * Create My List feature backend - Mitchell
- * Style movie index and show page - Alex
- * Seed movies - Alex, Jacob, Mitchell
- 
-### Day 4
- * Add styling and display movies to index page - Alex
- * Style My List feature - Mitchell
- * Search by movie - Jacob
- 
-### Day 5
-* Finish styling - Alex, Mitchell, Jacob
-* Deployment to Heroku - Jacob
