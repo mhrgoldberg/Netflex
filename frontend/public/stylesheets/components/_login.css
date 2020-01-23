@@ -227,6 +227,7 @@ input {
   font-weight: 400;
   -webkit-text-stroke: 1px violet;
   text-shadow: 5px 5px 8px violet;
+  font-family: 'Roboto', sans-serif;
   /* animation: logoflicker .1s linear infinite alternate; */
 }
 
@@ -320,4 +321,5 @@ input {
 
 .nav-img {
   margin-bottom: 15px;
+  font-family: 'Arizonia', cursive;
 }
