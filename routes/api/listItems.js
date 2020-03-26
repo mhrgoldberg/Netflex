@@ -1,30 +1,31 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-
+const User = require("../../models/User");
+const Movie = require("../../models/Movie");
 const ListItem = require("../../models/ListItem");
 
 router.get("/:userId", (req, res) => {
-  ListItem.find({ user: req.params.userId })
-    .sort({ date: -1 })
-    .then(listItems => {
-      const movieIds = listItems.map(listItem => listItem.movie);
-      return Movie.find({ _id: { $in: movieIds } }).then(movies => movies);
-    })
+  User.findById(req.params.userId, (err, user) => {
+    return Movie.find({ _id: { $in: user.myList } })
     .then(movies => res.json(movies))
-    .catch(err => res.status(404).json({ nolistfound: "No list items found" }));
+    .catch(err =>
+        res.status(404).json({ nolistfound: "No list items found" })
+      );
+  });
 });
 
 router.post(
   "/",
   // passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    const newListItem = new ListItem({
-      movie: req.body.movie,
-      user: req.body.user
-    });
+    const movie = req.body.movie;
+    const userId = req.body.user;
 
-    newListItem.save().then(listItem => res.json(listItem));
+    return User.findById(userId, (err, user) => {
+      user.myList.push(movie);
+      user.save();
+    });
   }
 );
 
