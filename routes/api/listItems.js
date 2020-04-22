@@ -21,7 +21,7 @@ router.post(
   (req, res) => {
     const movie = req.body.movie;
     const userId = req.body.user;
-
+    debugger
     return User.findById(userId, (err, user) => {
       user.myList.push(movie);
       user.save();
@@ -29,14 +29,18 @@ router.post(
   }
 );
 
-router.get("/delete/:movieId/", (req, res) => {
-  ListItem.deleteOne({ movie: req.params.movieId }, (err, listItem) => {
-    if (err) {
-      res.json(err);
-    } else {
-      res.json("Removed Item");
-    }
-  });
+router.post("/delete/", (req, res) => {
+    const movie = req.body.movie;
+    const userId = req.body.user;
+    return User.findById(userId, (err, user) => {
+      user.myList = user.myList.filter(listItem => listItem === movie);
+      user.save();
+      if (err) {
+        res.json(err);
+      } else {
+        res.json("Removed Item");
+      }
+    });
 });
 
 module.exports = router;

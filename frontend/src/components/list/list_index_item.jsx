@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 
 const ListIndexItem = props => {
-  let { onClick, deleteItem, movie } = props;
+  let { onClick, deleteItem, movie, user } = props;
   let [isShown, setIsShown] = useState(false);
 
   return (
@@ -25,7 +25,7 @@ const ListIndexItem = props => {
             <i
               onClick={e => {
                 e.stopPropagation();
-                return deleteItem(movie._id);
+                return deleteItem();
               }}
               className="far fa-trash-alt"
             ></i>

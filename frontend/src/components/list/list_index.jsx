@@ -50,7 +50,8 @@ class ListIndex extends React.Component {
               key={movie._id}
               movie={movie}
               deleteItem={() => {
-                return this.props.deleteItem(movie._id)}}
+                const data = {movie: movie._id, user: this.props.user.id}
+                return this.props.deleteItem(data)}}
               onClick={this.handleMovieClick(movie._id)}
             />
           );
