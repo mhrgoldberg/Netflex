@@ -4,8 +4,9 @@ export const getList = userId => {
   return axios.get(`/api/lists/${userId}`)
 };
 
-export const deleteListItem = movieId => {
-  return axios.get(`/api/lists/delete/${movieId}`)
+export const deleteListItem = data => {
+  debugger;
+  return axios.post(`/api/lists/delete/`, data)
 };
 
 export const addListItem = data => {
