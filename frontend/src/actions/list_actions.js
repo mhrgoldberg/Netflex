@@ -29,8 +29,7 @@ export const addNewItem = (item) => dispatch => {
     .then(item => dispatch(reciveNewItem(item)))
     .catch(err => console.log(err));
 }
-export const deleteItem = (data) => dispatch => {
-  debugger
+export const deleteItem = (data) => dispatch => {  
   return deleteListItem(data)
     .then(() => {
       return dispatch(removeItem(data));

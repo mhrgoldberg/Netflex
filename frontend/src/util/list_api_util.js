@@ -5,7 +5,6 @@ export const getList = userId => {
 };
 
 export const deleteListItem = data => {
-  debugger;
   return axios.post(`/api/lists/delete/`, data)
 };
 

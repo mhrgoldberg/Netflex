@@ -21,7 +21,6 @@ router.post(
   (req, res) => {
     const movie = req.body.movie;
     const userId = req.body.user;
-    debugger
     return User.findById(userId, (err, user) => {
       user.myList.push(movie);
       user.save();
